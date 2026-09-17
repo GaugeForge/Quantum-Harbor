@@ -1,0 +1,5 @@
+# Authoritative instance data — byte-exact, no EOL normalization (preserves manifest sha256).
+# `-whitespace` keeps the preserved CRLF/EOL out of `git diff --check` (the bytes
+# are intentional and SHA-bound, not a trailing-whitespace defect to fix).
+*.csv -text -whitespace
+*.json -text -whitespace

@@ -1,0 +1,50 @@
+version = "1.0"
+
+[metadata]
+author_name = "QIQCBench"
+difficulty = "hard"
+category = "quantum-experiment-control"
+tags = ["transmon", "tunable-coupler", "cz", "net-zero", "flux", "predistortion", "calibration", "simulator", "mcp", "qiqcbench"]
+description = "Build a high-fidelity CZ on a tunable-coupler transmon pair via a net-zero adiabatic flux pulse on the |11>-|02> crossing, through a realistic control stack (program DAC samples -> flux-line distortion -> predistort). Characterize the device + line, design the net-zero pulse + predistortion + coupler biases + virtual-Z, and verify."
+
+[agent]
+timeout_sec = 9000
+setup_timeout_sec = 600
+
+[environment]
+build_timeout_sec = 600
+cpus = 2
+memory_mb = 4096
+allow_internet = true
+
+[[environment.mcp_servers]]
+name = "qsim"
+transport = "streamable-http"
+url = "http://qsim:8123/mcp"
+
+[verifier]
+timeout_sec = 600
+# Separate verifier environment (built from tests/Dockerfile) carrying the hidden
+# device truth + the authoritative replay; the agent's `main` sees only public
+# surfaces via MCP.
+environment_mode = "separate"
+
+[verifier.environment]
+docker_image = "qiqcbench-cz-verifier:latest"
+
+[verifier.env]
+QIQCBENCH_VERIFIER_ARTIFACTS_DIR = "/logs/verifier/artifacts"
+
+[[artifacts]]
+source = "/qsim_logs/experiment_log.jsonl"
+service = "qsim"
+
+[[artifacts]]
+source = "/qsim_logs/final_answer.json"
+service = "qsim"
+
+# Complete raw job-result evidence published by qsim: keeps the scientific
+# record replayable and artifact-closed instead of transcript-only.
+[[artifacts]]
+source = "/qsim_logs/public_job_results"
+service = "qsim"

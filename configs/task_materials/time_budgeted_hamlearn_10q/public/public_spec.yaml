@@ -1,0 +1,54 @@
+task_id: time_budgeted_hamlearn_10q
+device_class: blackbox_analog_dynamics
+n_qubits: 10
+qubit_labels:
+- q0
+- q1
+- q2
+- q3
+- q4
+- q5
+- q6
+- q7
+- q8
+- q9
+dynamics_primitive: run_hamiltonian_probe_batch
+hamiltonian_convention: U(t)=exp(-i t/2 sum omega_P P)
+coefficient_unit: rad_per_us
+locality_promise: 1-local terms plus nearest-neighbor 2-local terms
+sparsity_promise_max_nonzero: 30
+coefficient_bound_rad_per_us:
+- -0.6
+- 0.6
+allowed_initial_states:
+- z+
+- z-
+- x+
+- x-
+- y+
+- y-
+allowed_observable_weight:
+- 1
+- 4
+evolve_time_range_us:
+- 0.01
+- 2.5
+evolve_time_resolution_us: 0.002
+off_grid_time_policy: reject
+return_type: raw_pauli_outcomes
+num_internal_repetitions: 1024
+nominal_single_probe_noise_1sigma: 0.0312
+total_evolution_time_budget_us: 220.0
+max_probe_rows: 600
+max_rows_per_batch: 64
+target_wall_clock_runtime_s: 1200
+term_order_convention: one_local_xyz_then_edge_local_xx_xy_xz_yx_yy_yz_zx_zy_zz
+budget:
+  max_ingress_request_bytes: 1000000
+  max_final_answer_serialized_bytes: 262144
+  max_final_answer_submissions: 5
+  max_answer_string_characters: 20000
+  max_final_answer_nesting_depth: 16
+  max_job_result_polls: 20000
+  max_probe_jobs: 640
+notes: The Hamiltonian dictionary is public, but the coefficient vector and support are hidden. The lab notebook may be stale. Passing requires both worst-coefficient and relative full-vector accuracy. The evolve-time range and resolution are device constraints, not protocol recommendations.

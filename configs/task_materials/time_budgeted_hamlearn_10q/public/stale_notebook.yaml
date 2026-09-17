@@ -1,0 +1,24 @@
+task_id: time_budgeted_hamlearn_10q
+coefficients_rad_per_us:
+  X0: 0.29
+  Z0: -0.1
+  Y1: 0.25
+  Z2: 0.13
+  X3: -0.32
+  Y4: 0.11
+  Z5: -0.16
+  X6: 0.18
+  Y7: -0.16
+  Z9: -0.22
+  Z0Z1: 0.2
+  X1Z2: -0.15
+  Y2Y3: 0.1
+  Z3X4: -0.36
+  X4X5: 0.21
+  Z6Z7: 0.12
+  X7Y8: 0.18
+  X0Y1: 0.14
+  Z7Z8: -0.19
+  X8X9: -0.15
+note: Historical, unverified coefficient estimates from an earlier device characterization. Entries may be biased, missing, or mislabeled. Current-device qsim evidence is authoritative.
+reliability: stale; use only as a weak prior

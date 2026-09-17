@@ -1,0 +1,37 @@
+schema_version: 1
+qtype: neutral_atom_dm_processor
+mcp_instructions: >-
+  Zoned reconfigurable neutral-atom (Rydberg) array: a storage row plus a Rydberg gate zone,
+  operated at the gate + tweezer-schedule level and simulated as an exact density matrix.
+  run_atom_program(device_id, ops, shots, layout, idle_scale?, noise_scale?) executes a scheduled
+  program of ops -- init{atom|atoms, state in 0/1/+/-}, gate{atoms, gate in rx/ry/rz, angle,
+  scope in local/global} (rotations are the ONLY single-atom gates), cz{pair:[a,b]}
+  (Rydberg-blockade CZ; both atoms must occupy the two positions of ONE gate-zone slot),
+  move{atom, to_site} (AOD transport; duration = distance x rate + settle), measure{atoms, reset,
+  expect?} (fluorescence, Z basis ONLY -- basis changes are your own rotations; bright=1, dark=0;
+  a lost atom reads 0; with expect=[bits] the readout is a heralded-abort verification: a shot
+  whose observed bit differs aborts at that atom -- that bit is recorded, every later record
+  column reads 0 with executed=0, and the shot is flagged in aborted_b64; expected-outcome
+  readouts do not count toward the mid-circuit branch cap), feedforward{on_bit, value, then}
+  (condition a nested op on an earlier recorded bit; a conditional measure always records its
+  column -- 0 with executed=0 when the condition is unmet -- and may not carry expect). layout
+  (required) lists each atom's initial site and sets the atom count. Every FREE recorded
+  mid-circuit bit (a measure without expect before the terminal readout block) splits the exact
+  simulation; validate_schedule reports mid_circuit_bits (free, capped by 2**bits <= max_branches)
+  and verified_bits (expected, not capped). idle_scale
+  multiplies every duration; noise_scale rescales every error rate together -- the standard dial
+  for error-order scaling studies. All headline results are defined at noise_scale = 1.
+  run_atom_program_sweep(..., sweep_parameter, sweep_values) runs the same ops at several
+  noise_scale OR idle_scale values in one job (budgets charge points x shots); per-point raw bits
+  are referenced by data.raw_data_file below /qsim_logs -- inspect them with a local script
+  rather than printing. validate_schedule (sync, free) returns legality + nominal duration +
+  atoms_peak + move_count (no shots, no fidelity). The exact simulation also has a WORKING-SET
+  limit that program length does not predict: atom count and branch structure set it, and
+  budgets.state_memory on the device spec publishes the budget and the rule. validate_schedule
+  returns state_matrices, state_bytes and state_budget_bytes, and marks an over-budget schedule
+  illegal with the same reason submission would refuse it -- price a schedule there before
+  spending a call on it. All run_* tools are async: submit, then poll
+  get_job_result. A single shot budget accumulates across the run. Consult the active device
+  notebook's reliability and calibration status, and re-measure what your protocol relies on.
+  Follow the active task instruction and public device materials for task-specific protocols,
+  evidence requirements, and final-answer fields.

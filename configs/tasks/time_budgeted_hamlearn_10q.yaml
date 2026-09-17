@@ -1,0 +1,33 @@
+schema_version: 1
+task_id: time_budgeted_hamlearn_10q
+device_id: hamlearn_10q_chain_v1
+default_backend_mode: simulator
+allowed_backend_modes:
+  - simulator
+default_surfaces:
+  - mcp
+allowed_surfaces:
+  - mcp
+description: |
+  Time-budgeted Hamiltonian learning on a 10-qubit black-box analog device.
+
+  Learn the hidden coefficient vector of a nearest-neighbor Hamiltonian H =
+  (1/2) sum_P omega_P P over the public 111-term dictionary (30 one-local + 81
+  nearest-neighbor two-local terms) and the public upper bound on nonzero
+  coefficients. The coefficients are hidden; the term dictionary, the stale
+  lab-notebook prior, and the probe constraints are public.
+
+  Probe the device with run_hamiltonian_probe_batch: prepare a product state,
+  evolve under U(t)=exp(-i t H) for an on-grid time, and measure a Pauli
+  observable, receiving raw +-1 outcomes. The scarce resource is the total
+  accepted evolution time (budget), which accumulates across batches.
+
+  Submit the full 111-length coefficient vector with per-coefficient 1-sigma
+  uncertainties. Passing requires both worst-case (L-infinity) and relative-L2
+  coefficient accuracy plus a complete, artifact-verified experiment record
+  within budget. Raw-data compatibility is reported as a diagnostic and does
+  not enter binary pass. The verifier does not grade the experiment design or
+  estimator through a Fisher, covariance, or Jacobian proxy.
+enabled_capabilities:
+  - hamiltonian_probe
+wall_clock_budget_s: 3600

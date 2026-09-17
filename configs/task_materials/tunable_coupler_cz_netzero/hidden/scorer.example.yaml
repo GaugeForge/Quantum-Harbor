@@ -1,0 +1,59 @@
+schema_version: 2
+device_id: tunable_coupler_cz_v0
+omega_1_max_ghz: 4.5
+omega_2_ghz: 4.0
+omega_c_max_ghz: 6.5
+alpha_1_ghz: -0.3
+alpha_2_ghz: -0.33
+arc_asym: 0.001
+g12_ghz: 0.005
+gg_ghz2: 0.002537
+zeta_scale: 1.0
+t1_us: 45.0
+t2_us: 32.0
+flux_settle_amplitudes:
+- 0.38
+- 0.11
+flux_settle_taus_ns:
+- 1.7
+- 14.0
+robustness_offset_phi0: 0.0003
+readout_q1:
+- 0.02
+- 0.03
+readout_q2:
+- 0.025
+- 0.035
+j_gate_mhz: 9.951307770924087
+coupler_idle_flux: 0.2660166880723143
+coupler_gate_flux: 0.36
+crossing_flux_q1: 0.2683757460000821
+alpha_2_rel_tol: 0.05
+alpha_2_stale_reject_mhz: -300.0
+j_rel_tol: 0.25
+j_abs_tol_mhz: 0.5
+j_stale_reject_mhz: 7.0
+decoupling_flux_tol: 0.03
+settling_rel_tol: 0.1
+crossing_flux_tol: 0.04
+min_completed_flux_jobs: 15
+phi2q_tol_rad: 0.05
+leakage_max: 0.01
+infidelity_max: 0.015
+predistortion_residual_max: 0.01
+netzero_advantage_min: 3.0
+idle_zz_max_khz: 10.0
+netzero_integral_max_phi0_ns: 0.05
+gate_window_ns:
+- 36.0
+- 100.0
+max_programmed_samples: 300
+alpha_2_band_mhz:
+- -400.0
+- -200.0
+j_band_mhz:
+- 2.0
+- 30.0
+flux_band_phi0:
+- 0.0
+- 0.45

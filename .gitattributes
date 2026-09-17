@@ -1,0 +1,6 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+docker/qsim/*.sh text eol=lf
+docker/qsim/requirements.txt text eol=lf
+harbor_tasks/*/tests/test.sh text eol=lf
+configs/task_materials/** text eol=lf

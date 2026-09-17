@@ -1,0 +1,33 @@
+# Harbor run: adaptive_clustered_clbcs_h2o with codex (gpt-5.4, high), three concurrent attempts.
+# Build images: docker build -t qiqcbench-agent docker/agent/
+#   uv run python tools/build_qsim_images.py --tasks adaptive_clustered_clbcs_h2o
+# Auth: export OPENAI_API_KEY=<key>, plus OPENAI_BASE_URL for an OpenAI-compatible endpoint.
+# Run: harbor run -c configs/harbor/adaptive_clustered_clbcs_h2o_gpt54_high_panel.yaml
+jobs_dir: jobs
+n_attempts: 3
+
+orchestrator:
+  type: local
+  n_concurrent_trials: 3
+  quiet: false
+
+environment:
+  type: docker
+  force_build: false
+  delete: false
+  env:
+    - OPENAI_API_KEY=${OPENAI_API_KEY}
+    - OPENAI_BASE_URL=${OPENAI_BASE_URL}
+    - QSIM_BACKEND_MODE=simulator
+    - QIQCBENCH_TASK_ID=adaptive_clustered_clbcs_h2o
+
+agents:
+  - name: codex
+    model_name: gpt-5.4
+    kwargs:
+      reasoning_effort: high
+
+datasets:
+  - path: harbor_tasks
+    task_names:
+      - adaptive_clustered_clbcs_h2o

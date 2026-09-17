@@ -1,0 +1,28 @@
+schema_version: 1
+device_id: clbcs_h2o_14q_v0
+qtype: composite_measurement_estimation
+task_id: adaptive_clustered_clbcs_h2o
+device_class: composite_measurement_estimation
+molecule: H2O
+basis: STO-3G
+fermion_mapping: jordan_wigner
+pauli_string_order: leftmost_q0_rightmost_q13
+n_qubits: 14
+num_nonidentity_terms: 1085
+instance_files:
+  hamiltonian: h2o_sto3g_jw_pauli.csv
+  stale_notebook: stale_notebook.json
+num_components: 16
+coverage_floor: 1.0e-9
+pilot_max_settings: 96
+pilot_max_shots: 24576
+pilot_shots_per_setting_min: 64
+pilot_shots_per_setting_max: 512
+pilot_shots_multiple_of: 64
+production_settings: 192
+production_shots_per_setting: 256
+max_control_variates: 192
+evaluator_call_cap: 40
+lock_attempt_cap: 3
+estimator_protocol: clustered_inverse_coverage_control_variate
+target_wall_clock_runtime_s: 1800

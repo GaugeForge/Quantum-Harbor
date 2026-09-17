@@ -1,0 +1,28 @@
+schema_version: 1
+qtype: neutral_atom_logical_processor
+mcp_instructions: >-
+  Reconfigurable neutral-atom (Rydberg) array operated at the gate + tweezer-schedule level.
+  run_atom_program(device_id, ops, shots, layout?) executes a scheduled program of ops --
+  init{atom,state in 0/1/+/-/H}, gate{atoms,gate in h/s/sdg/x/y/z/rx/ry/rz,angle},
+  cz{pair:[a,b]} (Rydberg-blockade CZ, legal for any pair of distinct atoms),
+  move{atom,to_site} (AOD transport; adds a fixed nominal transport time and loss per move),
+  measure{atoms,basis in z/x/y,reset} (fluorescence: bright=1, dark=0; a lost atom reads 0 in
+  the bit record, and results also carry a per-shot diagnostic lost-atom mask, lost_b64, from
+  post-processed imaging),
+  feedforward{on_bit,value,then} -- per shot under a HIDDEN noise model, returning RAW per-shot,
+  per-measure-op bits (packed) for your own decoding/tomography. Consult the active device
+  notebook's reliability and calibration status, and re-measure only when that public material
+  or the task contract calls for it.
+  validate_schedule (sync, free) returns legality + nominal timing (no shots, no fidelity). All
+  run_* tools are async: submit, then poll get_job_result. A single shot budget accumulates across
+  the run. Follow the active task instruction and public device materials for task-specific
+  protocols, identities, evidence requirements, and final-answer fields.
+
+  When the active task enables the located_erasure_repair capability instead, run_atom_program is
+  not exposed: use only run_located_erasure_control_episodes(device_id, horizon, episodes,
+  controller), then poll get_job_result. A completed result references a digest-bound raw
+  role-level LDU/decision/transport/recovery/terminal artifact at data.raw_data_file relative to
+  /qsim_logs and contains no aggregate rate or controller ranking. The repair device charges a
+  run-wide episode cap on every accepted characterization job. The task final answer is the
+  bounded causal controller itself; public jobs are optional and are not cited for automatic
+  scientific credit.

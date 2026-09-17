@@ -1,0 +1,18 @@
+# Hidden config for clbcs_h2o_14q_v0 (qsim-only).
+# The hidden 14-qubit state is reconstructed in qsim hidden_dynamics
+# (construction.py). Runtime sampling uses fresh private entropy. Run with
+# QSIM_SNAPSHOT_HIDDEN_TRUTH=0 (the state is the answer).
+schema_version: 2
+device_id: clbcs_h2o_14q_v0
+qtype: composite_measurement_estimation
+task_id: adaptive_clustered_clbcs_h2o
+stale_lab_notebook:
+  warm_start_v_haar_claim: 602.0
+  stale_energy_hartree: -74.80
+  uncertainty_model: "treat all 49152 production shots as IID; ordinary shot-level SE"
+  control_variates: "set to zero; state is unknown so pilot fitting is unnecessary"
+  reuse_track_a_scheme_for_production: true
+  note: >-
+    Warm start was used for Track A. The statistical entries below were recorded
+    before the clustered production protocol was adopted.
+  reliability: "values accepted at the last scheduled calibration"

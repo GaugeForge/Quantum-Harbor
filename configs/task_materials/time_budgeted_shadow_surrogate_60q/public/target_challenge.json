@@ -1,0 +1,50 @@
+{
+  "challenge_id": "cb38a18966f9f416ea109892690619c6dff0d635e69a7bbab663c964ddcb002c",
+  "commitment": {
+    "canonicalization": "Python 3.11 json.dumps(value, allow_nan=False, ensure_ascii=False, separators=(',', ':'), sort_keys=True), encoded as UTF-8",
+    "commitment_domain": "qiqcbench/sealed-target-commitment/v1\\0",
+    "domain_suffix_interpretation": "\\0 denotes one NUL byte (0x00)",
+    "opening_payload_fields": [
+      "challenge_id",
+      "target_inputs_sha256",
+      "commitment_nonce"
+    ],
+    "scheme": "qiqcbench_sealed_target_sha256_v1",
+    "target_digest_domain": "qiqcbench/sealed-target-inputs/v1\\0",
+    "target_digest_payload": "ordered target_inputs list"
+  },
+  "commitment_scheme": "qiqcbench_sealed_target_sha256_v1",
+  "device_id": "boundedgate_60q_v0",
+  "domain": {
+    "lower_inclusive": -3.141592653589793,
+    "periodic": true,
+    "upper_inclusive": 3.141592653589793
+  },
+  "input_dimension": 6,
+  "sampling_strata": [
+    {
+      "count": 16,
+      "name": "uniform_torus",
+      "sampling_rule": "six independent Uniform[-pi, pi] coordinates"
+    },
+    {
+      "count": 8,
+      "name": "near_boundary",
+      "sampling_rule": "start with six independent Uniform[-pi, pi] coordinates; choose two coordinates uniformly without replacement; independently for each selected coordinate k, draw s_k Uniform{-1, +1} and delta_k Uniform[0.01, 0.08], then set x_k = s_k * (pi - delta_k)"
+    },
+    {
+      "count": 8,
+      "name": "diagonal_off_axis",
+      "sampling_rule": "draw magnitude Uniform[0.2, pi] and six independent uniform signs; return magnitude times the sign vector"
+    },
+    {
+      "count": 8,
+      "name": "sign_related_pairs",
+      "sampling_rule": "draw four bases with six independent Uniform[-pi, pi] coordinates; for each base return the base and its coordinatewise product with a uniform sign vector conditioned to contain at least one -1"
+    }
+  ],
+  "schema_version": 1,
+  "target_commitment_sha256": "6fc86abcd44d81afb1d9edeb369ae6209b6fc4b4b24f1484c4e62fc3bfeed13d",
+  "target_count": 40,
+  "task_id": "time_budgeted_shadow_surrogate_60q"
+}

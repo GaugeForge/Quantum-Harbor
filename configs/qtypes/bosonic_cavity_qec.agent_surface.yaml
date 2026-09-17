@@ -1,0 +1,16 @@
+schema_version: 1
+qtype: bosonic_cavity_qec
+mcp_instructions: >-
+  Quantum simulator MCP server. The device is a storage cavity (a bosonic mode, Fock cutoff
+  n_max) dispersively coupled to a transmon ancilla (g/e). Build programs from primitive ops
+  (displace, snap, ancilla_rotate, dispersive_wait, ancilla_measure, photon_number_measure,
+  idle, conditional) and run them with run_bosonic_program / run_bosonic_program_sweep. The
+  cavity loses photons; ancilla_measure records a syndrome bit you can feed back with a
+  conditional op (record=false performs the same measure/reset without returning a bit and
+  without multiplying the execution cost). The nested conditional op must not itself be a
+  measurement in schema v3 because the fixed-column result cannot represent branch-local
+  measurement records. Each shot returns the ordered list of recorded measurement outcomes
+  (syndrome bits and photon numbers). See get_device_spec for the exact ideal unitaries. An
+  optional evidence_tag can commit a task-defined scientific role before execution; consult
+  the active task instruction for its exact shape. Poll get_job_result; submit_final_answer
+  when ready.

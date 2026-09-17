@@ -1,0 +1,76 @@
+# One repository-complete fixed apparatus, independent of authorization tier.
+version = "1.2"
+
+[metadata]
+author_name = "QIQCBench"
+difficulty = "hard"
+category = "quantum-experiment-control"
+tags = ["bounded-gate", "surrogate-learning", "sparse-regression", "measurement-design", "shot-budget", "simulator", "mcp", "qiqcbench"]
+description = "Surrogate-model a hidden 60-qubit bounded-gate circuit under a hard shot/job budget. Design inputs and shot allocation, learn all 1770 pair-correlation functions from raw bitstrings within a public bounded Fourier class, then seal measurement admission and predict 40 precommitted held-out inputs. The device is stationary and the scored values are as-measured. Three disclosed gates cover accuracy, tail error, and validity/reveal binding."
+
+[agent]
+timeout_sec = 1800
+setup_timeout_sec = 600
+
+[environment]
+build_timeout_sec = 600
+cpus = 4
+memory_mb = 4096
+allow_internet = true
+
+[[environment.mcp_servers]]
+name = "qsim"
+transport = "streamable-http"
+url = "http://qsim:8123/mcp"
+
+[verifier]
+timeout_sec = 300
+# The physical model and reference calculation remain verifier/qsim-only.
+environment_mode = "separate"
+
+# Harbor needs an EXPLICIT verifier image for separate mode (it does NOT auto-build
+# tests/Dockerfile). This qsim-based image carries qiqcbench + the hidden configs +
+# the scorer; the agent's `main` never sees them.
+# Build: docker build -t qiqcbench-shadow-surrogate-verifier -f tests/Dockerfile tests/
+[verifier.environment]
+docker_image = "qiqcbench-shadow-surrogate-verifier:latest"
+
+[verifier.env]
+# In separate mode only /logs/verifier is collected back to the host, so keep the
+# score report (and copied evidence) under it alongside reward.txt.
+QIQCBENCH_VERIFIER_ARTIFACTS_DIR = "/logs/verifier/artifacts"
+# Official materialization injects QIQCBENCH_VERIFIER_CONTEXT through an
+# execution-scoped private carrier. The verifier derives the matching hidden
+# commitment secret from that context. The tracked task must not inherit or
+# template either private binding value.
+# Ferried inputs must match the independently baked source. The verifier
+# derives reference values from that actual device; no private study package
+# or cached truth file is required.
+
+# Collect the agent's qsim evidence from the sidecar into the verifier container.
+[[artifacts]]
+source = "/qsim_logs/experiment_log.jsonl"
+service = "qsim"
+
+[[artifacts]]
+source = "/qsim_logs/final_answer.json"
+service = "qsim"
+
+# Complete raw offloaded shot evidence: keeps the scientific record replayable
+# and artifact-closed (the verifier also copies it into its artifacts dir).
+[[artifacts]]
+source = "/qsim_logs/public_job_results"
+service = "qsim"
+
+# Exact physical/public input bytes, copied only into the separate verifier.
+[[artifacts]]
+source = "/app/configs/task_materials/time_budgeted_shadow_surrogate_60q/public"
+service = "qsim"
+
+[[artifacts]]
+source = "/app/configs/devices/boundedgate_60q_v0.hidden.example.yaml"
+service = "qsim"
+
+[[artifacts]]
+source = "/app/configs/devices/boundedgate_60q_v0.public.yaml"
+service = "qsim"

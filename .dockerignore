@@ -1,0 +1,60 @@
+# Don't ship dev clutter into Docker build contexts.
+
+# Python
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+**/*.egg-info/
+build/
+dist/
+
+# Virtual envs (we install fresh inside images)
+.venv/
+.uv/
+venv/
+
+# Test / lint caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# VCS
+.git/
+.gitignore
+.gitattributes
+
+# Editor and local agent workspaces
+.vscode/
+.idea/
+.cursor/
+.opencode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# QIQCBench artifacts (large, per-run)
+runs/
+jobs/
+.eval/
+.eval-*/
+*.log
+
+# Docs (not needed at runtime)
+docs/
+*.md
+!README.md
+
+# Test data (not needed in published images)
+tests/
+
+# Real hidden configs must not enter the image (only example.yaml does)
+configs/devices/*.hidden.yaml
+!configs/devices/*.hidden.example.yaml
+# Official edition operator directories: an image built after provisioning
+# must never bake owner-private official truth into its layers or cache.
+configs/task_materials/*/official_runtime

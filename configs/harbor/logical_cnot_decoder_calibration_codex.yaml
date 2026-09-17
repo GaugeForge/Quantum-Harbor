@@ -1,0 +1,33 @@
+# Harbor run: logical_cnot_decoder_calibration with codex (gpt-5.5, medium).
+# Build images: docker build -t qiqcbench-agent docker/agent/
+#   uv run python tools/build_qsim_images.py --tasks logical_cnot_decoder_calibration
+# Auth: export OPENAI_API_KEY=<key>, plus OPENAI_BASE_URL for an OpenAI-compatible endpoint.
+# Run: harbor run -c configs/harbor/logical_cnot_decoder_calibration_codex.yaml
+jobs_dir: jobs
+n_attempts: 1
+
+orchestrator:
+  type: local
+  n_concurrent_trials: 1
+  quiet: false
+
+environment:
+  type: docker
+  force_build: false
+  delete: false
+  env:
+    - OPENAI_API_KEY=${OPENAI_API_KEY}
+    - OPENAI_BASE_URL=${OPENAI_BASE_URL}
+    - QSIM_BACKEND_MODE=simulator
+    - QIQCBENCH_TASK_ID=logical_cnot_decoder_calibration
+
+agents:
+  - name: codex
+    model_name: gpt-5.5
+    kwargs:
+      reasoning_effort: medium
+
+datasets:
+  - path: harbor_tasks
+    task_names:
+      - logical_cnot_decoder_calibration

@@ -1,0 +1,31 @@
+schema_version: 1
+task_id: time_budgeted_shadow_surrogate_60q
+device_id: boundedgate_60q_v0
+default_backend_mode: simulator
+allowed_backend_modes: [simulator]
+default_surfaces: [mcp]
+allowed_surfaces: [mcp]
+description: |
+  Build a classical surrogate for all 1770 two-point correlations of a hidden
+  60-qubit bounded-gate circuit under a hard measurement budget. The circuit
+  U(x) is Clifford gates plus at most 18 hidden single-qubit rotations driven
+  by a 6-angle input x; the dependence of every scored correlation on each
+  input angle is trigonometric with harmonic degree at most 3 (not every angle
+  need enter every pair). In the standard complex Fourier expansion, every
+  response has at most 64 nonzero integer-frequency modes; the active modes
+  and coefficients are hidden and may differ by pair. The device is
+  stationary; scored values are as-measured. The agent chooses inputs,
+  per-qubit measurement bases (fixed strings or per-shot
+  randomized), and shot counts, accumulating against a run-long budget of
+  315000 shots and 40 jobs (64 blocks and 192 settings per job). It then
+  irreversibly seals measurement admission, receives 40 precommitted held-out
+  inputs, and predicts C_ij(x) = <(X_i X_j + Y_i Y_j + Z_i Z_j)/3> for every
+  qubit pair at those inputs. Scored against
+  closed-form hidden truth by three disclosed gates: accuracy (overall RMSE
+  <= 0.0025, worst-target RMSE <= 0.0035), tail (max cell error <= 0.040),
+  and validity/lifecycle binding.
+enabled_capabilities:
+  - basis_shot_sampling
+  - sealed_holdout_reveal
+wall_clock_budget_s: 1800
+rating_mode: rubric

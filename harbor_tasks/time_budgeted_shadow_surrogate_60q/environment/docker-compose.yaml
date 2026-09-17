@@ -1,0 +1,67 @@
+services:
+  qsim:
+    image: qiqcbench-qsim:latest
+    build:
+      context: ../../..
+      dockerfile: docker/qsim/Dockerfile
+    pull_policy: never
+    healthcheck:
+      test: ["CMD", "bash", "/app/healthcheck.sh"]
+      interval: 5s
+      timeout: 10s
+      retries: 30
+      start_period: 20s
+    volumes:
+      - qsim_logs:/qsim_logs
+      # Poll-gated delivery: this nested volume is the only slice
+      # of /qsim_logs the agent can see. An oversized get_job_result payload
+      # materializes under it only while a terminal poll is handled, so
+      # unpolled raw_results/, experiment_log.jsonl, and final_answer.json
+      # stay invisible to main.
+      - qsim_public_job_results:/qsim_logs/public_job_results
+      # Agent submission surface: the agent writes its
+      # large final answer as a file on the sanctioned `submission` volume, and
+      # qsim reads it in submit_final_answer. qsim mounts it READ-ONLY at the
+      # sanctioned /submission_artifacts target: qsim holds hidden truth and must
+      # never obtain a writable handle to a volume the agent reads back (harbor
+      # enforces this). This surface carries only the agent's own answer.
+      - submission:/submission_artifacts:ro
+      # qsim MAY see the full configs tree (incl. hidden); main may NOT.
+      - ../../../configs:/app/configs:ro
+    environment:
+      - QSIM_HOST=0.0.0.0
+      - QSIM_PORT=8123
+      # Enables file-based submit_final_answer for this task and names qsim's
+      # read-only view of the submission volume. Absent elsewhere, so every
+      # other bundle rejects answer_file and keeps the inline path.
+      - QSIM_SUBMISSIONS_DIR=/submission_artifacts
+      - QSIM_DEVICE_ID=${QSIM_DEVICE_ID:-boundedgate_60q_v0}
+      - QSIM_BACKEND_MODE=${QSIM_BACKEND_MODE:-simulator}
+      # Hidden truth (the circuit + noise) is the answer key: never snapshot it
+      # into the qsim_logs volume that is ferried into host artifacts.
+      - QSIM_SNAPSHOT_HIDDEN_TRUTH=0
+      - QIQCBENCH_CONFIGS=/app/configs
+      - QIQCBENCH_TASK_ID=${QIQCBENCH_TASK_ID:-time_budgeted_shadow_surrogate_60q}
+      # One tracked fixed apparatus in direct and authorized runs. Generic
+      # execution authorization changes provenance, never the physical task.
+      - QIQCBENCH_HIDDEN_PATH=/app/configs/devices/boundedgate_60q_v0.hidden.example.yaml
+      - QIQCBENCH_SURFACES=${QIQCBENCH_SURFACES:-}
+  main:
+    volumes:
+      # Agent-visible qsim evidence: only the poll-gated
+      # public_job_results delivery volume; the full qsim_logs volume stays
+      # private to qsim and the Harbor artifact ferry.
+      - qsim_public_job_results:/qsim_logs/public_job_results:ro
+      # Agent-writable submission surface: the agent writes its large final
+      # answer here (write-rw at the sanctioned /submission target) and passes
+      # submit_final_answer(answer_file=..., answer_sha256=...).
+      - submission:/submission
+      - ../../../configs/task_materials/time_budgeted_shadow_surrogate_60q/public:/task_materials:ro
+    environment:
+      - no_proxy=qsim,localhost,127.0.0.1,host.docker.internal
+      - NO_PROXY=qsim,localhost,127.0.0.1,host.docker.internal
+      - QIQCBENCH_SURFACES=${QIQCBENCH_SURFACES:-}
+volumes:
+  qsim_logs:
+  qsim_public_job_results:
+  submission:

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "files": [
+    {
+      "source": "harbor_tasks/time_budgeted_hamlearn_10q/tests/Dockerfile",
+      "target": "Dockerfile",
+      "mode": "0644"
+    },
+    {
+      "source": "harbor_tasks/time_budgeted_hamlearn_10q/tests/requirements.txt",
+      "target": "requirements.txt",
+      "mode": "0644"
+    },
+    {
+      "source": "harbor_tasks/time_budgeted_hamlearn_10q/tests/test.sh",
+      "target": "test.sh",
+      "mode": "0755"
+    },
+    {
+      "source": "harbor_tasks/time_budgeted_hamlearn_10q/tests/score_hamlearn.py",
+      "target": "score_hamlearn.py",
+      "mode": "0644"
+    },
+    {
+      "source": "src/qiqcbench/qsim/hidden_dynamics/time_budgeted_hamlearn_10q/standalone_contract.py",
+      "target": "hamlearn_contract.py",
+      "mode": "0644"
+    },
+    {
+      "source": "configs/task_materials/time_budgeted_hamlearn_10q/hidden/hidden_scorer.yaml",
+      "target": "private/hidden_scorer.yaml",
+      "mode": "0400"
+    }
+  ]
+}

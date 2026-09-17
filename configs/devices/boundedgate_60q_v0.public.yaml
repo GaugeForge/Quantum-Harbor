@@ -1,0 +1,29 @@
+schema_version: 3
+device_id: boundedgate_60q_v0
+qtype: blackbox_boundedgate_circuit
+n_qubits: 60
+input_dimension: 6
+max_rotation_gates: 18
+max_harmonic_degree_per_angle: 3
+budget:
+  total_shot_budget: 315000
+  max_jobs: 40
+  max_blocks_per_job: 64
+  max_settings_per_job: 192
+  max_shots_per_setting: 4000
+  max_ingress_request_bytes: 8388608
+  max_metadata_calls: 256
+  max_job_result_polls: 4096
+  max_sealed_holdout_reveals: 4
+  max_final_answer_serialized_bytes: 4194304
+  max_final_answer_submissions: 4
+  max_answer_string_characters: 16384
+target_challenge:
+  schema_version: 1
+  challenge_id: cb38a18966f9f416ea109892690619c6dff0d635e69a7bbab663c964ddcb002c
+  commitment_scheme: qiqcbench_sealed_target_sha256_v1
+  target_count: 40
+  input_dimension: 6
+  target_commitment_sha256: 6fc86abcd44d81afb1d9edeb369ae6209b6fc4b4b24f1484c4e62fc3bfeed13d
+measurement_return: bitstring
+notes: The circuit is fixed for the whole run. Internal measurement behavior is guaranteed only as stated by the task. Measurement settings are per-qubit Pauli bases (or per-shot randomized bases).

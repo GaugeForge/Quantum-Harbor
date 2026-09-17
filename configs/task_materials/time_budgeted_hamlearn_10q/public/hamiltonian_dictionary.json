@@ -1,0 +1,563 @@
+{
+  "term_order_convention": "one_local_xyz_then_edge_local_xx_xy_xz_yx_yy_yz_zx_zy_zz",
+  "num_terms": 111,
+  "n_qubits": 10,
+  "hamiltonian_convention": "U(t)=exp(-i t/2 sum omega_P P)",
+  "terms": [
+    {
+      "name": "X0",
+      "pauli": "XIIIIIIIII",
+      "weight": 1
+    },
+    {
+      "name": "Y0",
+      "pauli": "YIIIIIIIII",
+      "weight": 1
+    },
+    {
+      "name": "Z0",
+      "pauli": "ZIIIIIIIII",
+      "weight": 1
+    },
+    {
+      "name": "X1",
+      "pauli": "IXIIIIIIII",
+      "weight": 1
+    },
+    {
+      "name": "Y1",
+      "pauli": "IYIIIIIIII",
+      "weight": 1
+    },
+    {
+      "name": "Z1",
+      "pauli": "IZIIIIIIII",
+      "weight": 1
+    },
+    {
+      "name": "X2",
+      "pauli": "IIXIIIIIII",
+      "weight": 1
+    },
+    {
+      "name": "Y2",
+      "pauli": "IIYIIIIIII",
+      "weight": 1
+    },
+    {
+      "name": "Z2",
+      "pauli": "IIZIIIIIII",
+      "weight": 1
+    },
+    {
+      "name": "X3",
+      "pauli": "IIIXIIIIII",
+      "weight": 1
+    },
+    {
+      "name": "Y3",
+      "pauli": "IIIYIIIIII",
+      "weight": 1
+    },
+    {
+      "name": "Z3",
+      "pauli": "IIIZIIIIII",
+      "weight": 1
+    },
+    {
+      "name": "X4",
+      "pauli": "IIIIXIIIII",
+      "weight": 1
+    },
+    {
+      "name": "Y4",
+      "pauli": "IIIIYIIIII",
+      "weight": 1
+    },
+    {
+      "name": "Z4",
+      "pauli": "IIIIZIIIII",
+      "weight": 1
+    },
+    {
+      "name": "X5",
+      "pauli": "IIIIIXIIII",
+      "weight": 1
+    },
+    {
+      "name": "Y5",
+      "pauli": "IIIIIYIIII",
+      "weight": 1
+    },
+    {
+      "name": "Z5",
+      "pauli": "IIIIIZIIII",
+      "weight": 1
+    },
+    {
+      "name": "X6",
+      "pauli": "IIIIIIXIII",
+      "weight": 1
+    },
+    {
+      "name": "Y6",
+      "pauli": "IIIIIIYIII",
+      "weight": 1
+    },
+    {
+      "name": "Z6",
+      "pauli": "IIIIIIZIII",
+      "weight": 1
+    },
+    {
+      "name": "X7",
+      "pauli": "IIIIIIIXII",
+      "weight": 1
+    },
+    {
+      "name": "Y7",
+      "pauli": "IIIIIIIYII",
+      "weight": 1
+    },
+    {
+      "name": "Z7",
+      "pauli": "IIIIIIIZII",
+      "weight": 1
+    },
+    {
+      "name": "X8",
+      "pauli": "IIIIIIIIXI",
+      "weight": 1
+    },
+    {
+      "name": "Y8",
+      "pauli": "IIIIIIIIYI",
+      "weight": 1
+    },
+    {
+      "name": "Z8",
+      "pauli": "IIIIIIIIZI",
+      "weight": 1
+    },
+    {
+      "name": "X9",
+      "pauli": "IIIIIIIIIX",
+      "weight": 1
+    },
+    {
+      "name": "Y9",
+      "pauli": "IIIIIIIIIY",
+      "weight": 1
+    },
+    {
+      "name": "Z9",
+      "pauli": "IIIIIIIIIZ",
+      "weight": 1
+    },
+    {
+      "name": "X0X1",
+      "pauli": "XXIIIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "X0Y1",
+      "pauli": "XYIIIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "X0Z1",
+      "pauli": "XZIIIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "Y0X1",
+      "pauli": "YXIIIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "Y0Y1",
+      "pauli": "YYIIIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "Y0Z1",
+      "pauli": "YZIIIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "Z0X1",
+      "pauli": "ZXIIIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "Z0Y1",
+      "pauli": "ZYIIIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "Z0Z1",
+      "pauli": "ZZIIIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "X1X2",
+      "pauli": "IXXIIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "X1Y2",
+      "pauli": "IXYIIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "X1Z2",
+      "pauli": "IXZIIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "Y1X2",
+      "pauli": "IYXIIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "Y1Y2",
+      "pauli": "IYYIIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "Y1Z2",
+      "pauli": "IYZIIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "Z1X2",
+      "pauli": "IZXIIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "Z1Y2",
+      "pauli": "IZYIIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "Z1Z2",
+      "pauli": "IZZIIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "X2X3",
+      "pauli": "IIXXIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "X2Y3",
+      "pauli": "IIXYIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "X2Z3",
+      "pauli": "IIXZIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "Y2X3",
+      "pauli": "IIYXIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "Y2Y3",
+      "pauli": "IIYYIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "Y2Z3",
+      "pauli": "IIYZIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "Z2X3",
+      "pauli": "IIZXIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "Z2Y3",
+      "pauli": "IIZYIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "Z2Z3",
+      "pauli": "IIZZIIIIII",
+      "weight": 2
+    },
+    {
+      "name": "X3X4",
+      "pauli": "IIIXXIIIII",
+      "weight": 2
+    },
+    {
+      "name": "X3Y4",
+      "pauli": "IIIXYIIIII",
+      "weight": 2
+    },
+    {
+      "name": "X3Z4",
+      "pauli": "IIIXZIIIII",
+      "weight": 2
+    },
+    {
+      "name": "Y3X4",
+      "pauli": "IIIYXIIIII",
+      "weight": 2
+    },
+    {
+      "name": "Y3Y4",
+      "pauli": "IIIYYIIIII",
+      "weight": 2
+    },
+    {
+      "name": "Y3Z4",
+      "pauli": "IIIYZIIIII",
+      "weight": 2
+    },
+    {
+      "name": "Z3X4",
+      "pauli": "IIIZXIIIII",
+      "weight": 2
+    },
+    {
+      "name": "Z3Y4",
+      "pauli": "IIIZYIIIII",
+      "weight": 2
+    },
+    {
+      "name": "Z3Z4",
+      "pauli": "IIIZZIIIII",
+      "weight": 2
+    },
+    {
+      "name": "X4X5",
+      "pauli": "IIIIXXIIII",
+      "weight": 2
+    },
+    {
+      "name": "X4Y5",
+      "pauli": "IIIIXYIIII",
+      "weight": 2
+    },
+    {
+      "name": "X4Z5",
+      "pauli": "IIIIXZIIII",
+      "weight": 2
+    },
+    {
+      "name": "Y4X5",
+      "pauli": "IIIIYXIIII",
+      "weight": 2
+    },
+    {
+      "name": "Y4Y5",
+      "pauli": "IIIIYYIIII",
+      "weight": 2
+    },
+    {
+      "name": "Y4Z5",
+      "pauli": "IIIIYZIIII",
+      "weight": 2
+    },
+    {
+      "name": "Z4X5",
+      "pauli": "IIIIZXIIII",
+      "weight": 2
+    },
+    {
+      "name": "Z4Y5",
+      "pauli": "IIIIZYIIII",
+      "weight": 2
+    },
+    {
+      "name": "Z4Z5",
+      "pauli": "IIIIZZIIII",
+      "weight": 2
+    },
+    {
+      "name": "X5X6",
+      "pauli": "IIIIIXXIII",
+      "weight": 2
+    },
+    {
+      "name": "X5Y6",
+      "pauli": "IIIIIXYIII",
+      "weight": 2
+    },
+    {
+      "name": "X5Z6",
+      "pauli": "IIIIIXZIII",
+      "weight": 2
+    },
+    {
+      "name": "Y5X6",
+      "pauli": "IIIIIYXIII",
+      "weight": 2
+    },
+    {
+      "name": "Y5Y6",
+      "pauli": "IIIIIYYIII",
+      "weight": 2
+    },
+    {
+      "name": "Y5Z6",
+      "pauli": "IIIIIYZIII",
+      "weight": 2
+    },
+    {
+      "name": "Z5X6",
+      "pauli": "IIIIIZXIII",
+      "weight": 2
+    },
+    {
+      "name": "Z5Y6",
+      "pauli": "IIIIIZYIII",
+      "weight": 2
+    },
+    {
+      "name": "Z5Z6",
+      "pauli": "IIIIIZZIII",
+      "weight": 2
+    },
+    {
+      "name": "X6X7",
+      "pauli": "IIIIIIXXII",
+      "weight": 2
+    },
+    {
+      "name": "X6Y7",
+      "pauli": "IIIIIIXYII",
+      "weight": 2
+    },
+    {
+      "name": "X6Z7",
+      "pauli": "IIIIIIXZII",
+      "weight": 2
+    },
+    {
+      "name": "Y6X7",
+      "pauli": "IIIIIIYXII",
+      "weight": 2
+    },
+    {
+      "name": "Y6Y7",
+      "pauli": "IIIIIIYYII",
+      "weight": 2
+    },
+    {
+      "name": "Y6Z7",
+      "pauli": "IIIIIIYZII",
+      "weight": 2
+    },
+    {
+      "name": "Z6X7",
+      "pauli": "IIIIIIZXII",
+      "weight": 2
+    },
+    {
+      "name": "Z6Y7",
+      "pauli": "IIIIIIZYII",
+      "weight": 2
+    },
+    {
+      "name": "Z6Z7",
+      "pauli": "IIIIIIZZII",
+      "weight": 2
+    },
+    {
+      "name": "X7X8",
+      "pauli": "IIIIIIIXXI",
+      "weight": 2
+    },
+    {
+      "name": "X7Y8",
+      "pauli": "IIIIIIIXYI",
+      "weight": 2
+    },
+    {
+      "name": "X7Z8",
+      "pauli": "IIIIIIIXZI",
+      "weight": 2
+    },
+    {
+      "name": "Y7X8",
+      "pauli": "IIIIIIIYXI",
+      "weight": 2
+    },
+    {
+      "name": "Y7Y8",
+      "pauli": "IIIIIIIYYI",
+      "weight": 2
+    },
+    {
+      "name": "Y7Z8",
+      "pauli": "IIIIIIIYZI",
+      "weight": 2
+    },
+    {
+      "name": "Z7X8",
+      "pauli": "IIIIIIIZXI",
+      "weight": 2
+    },
+    {
+      "name": "Z7Y8",
+      "pauli": "IIIIIIIZYI",
+      "weight": 2
+    },
+    {
+      "name": "Z7Z8",
+      "pauli": "IIIIIIIZZI",
+      "weight": 2
+    },
+    {
+      "name": "X8X9",
+      "pauli": "IIIIIIIIXX",
+      "weight": 2
+    },
+    {
+      "name": "X8Y9",
+      "pauli": "IIIIIIIIXY",
+      "weight": 2
+    },
+    {
+      "name": "X8Z9",
+      "pauli": "IIIIIIIIXZ",
+      "weight": 2
+    },
+    {
+      "name": "Y8X9",
+      "pauli": "IIIIIIIIYX",
+      "weight": 2
+    },
+    {
+      "name": "Y8Y9",
+      "pauli": "IIIIIIIIYY",
+      "weight": 2
+    },
+    {
+      "name": "Y8Z9",
+      "pauli": "IIIIIIIIYZ",
+      "weight": 2
+    },
+    {
+      "name": "Z8X9",
+      "pauli": "IIIIIIIIZX",
+      "weight": 2
+    },
+    {
+      "name": "Z8Y9",
+      "pauli": "IIIIIIIIZY",
+      "weight": 2
+    },
+    {
+      "name": "Z8Z9",
+      "pauli": "IIIIIIIIZZ",
+      "weight": 2
+    }
+  ]
+}

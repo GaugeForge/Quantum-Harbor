@@ -1,0 +1,41 @@
+schema_version: 1
+task_id: logical_cnot_decoder_calibration
+device_id: sc_lattice_surgery_114q_v0
+default_backend_mode: simulator
+allowed_backend_modes:
+  - simulator
+default_surfaces:
+  - mcp
+allowed_surfaces:
+  - mcp
+description: |
+  Calibrate the decoding layer of a small fault-tolerant processor — d=5 memory AND a
+  lattice-surgery logical CNOT — on a ~114-qubit transmon-style 2D grid whose
+  circuit-level noise is HIDDEN, and drive both replayed error rates below their floors.
+
+  Three experiment tools share one shot budget and one shot-rounds budget:
+  run_memory_experiment (single-patch memory on d3_control / d3_intermediate / d3_target /
+  d5), run_merged_memory (the merged configuration held as one code, optionally with the
+  full split->merge->hold->split transition cycle), and run_lattice_surgery_cnot (the
+  fixed public CNOT schedule in the z / x / bell_zz / bell_xx reporting configurations).
+  All return RAW per-shot detection events plus raw readout evidence. The nominal numbers
+  are stale; the noise is inhomogeneous and spacetime-correlated (emergent hooks, leakage
+  with multi-round lifetimes, and merge-window mechanisms that exist in no single-patch
+  experiment). Estimate detector error models from the data — single-detector rates AND
+  two-point statistics (detector-detector correlations and detector-parity/observable
+  associations) — weight matching decoders, self-verify, and submit a d=5 memory DEM + a
+  CNOT spacetime DEM (over the public indexed detector superset) + decoder configs.
+
+  The verifier replays BOTH submitted DEMs + decoders on FRESH hidden shots (independent
+  RNG): pass iff the replayed d=5 memory logical error rate per cycle is below floor_mem
+  AND the replayed logical-CNOT error over the fixed 8-entry two-basis battery is below
+  floor_cnot on average with every entry below the per-entry cap. Lambda(3->5) and a
+  logical Bell-fidelity witness are derived and reported, never gated. Self-reported
+  rates are consistency-checked, never trusted.
+
+  This task's hidden noise model is the answer, so the run executes with the hidden-truth
+  snapshot disabled (QSIM_SNAPSHOT_HIDDEN_TRUTH=0).
+enabled_capabilities:
+  - lattice_surgery_calibration
+wall_clock_budget_s: 10800
+rating_mode: rubric

@@ -1,0 +1,59 @@
+version = "1.0"
+
+[metadata]
+author_name = "QIQCBench"
+difficulty = "hard"
+category = "quantum-experiment-control"
+tags = ["observable-estimation", "classical-shadows", "c-lbcs", "composite-measurement", "h2o", "clustered-sampling", "qiqcbench"]
+description = "Adaptive composite-measurement design for a fixed 14-qubit H2O/STO-3G Pauli Hamiltonian and one hidden state. Track A: minimize the state-independent C-LBCS average one-shot variance. Track B: optionally use up to a finite pilot budget, then lock a scheme + sparse control variates for a single clustered production run (192 bases x 256 shots), estimate the energy with the pinned inverse-coverage control-variate estimator, and report a cluster-correct 1-sigma uncertainty. The verifier recomputes the exact clustered private variance from the locked design + hidden state."
+
+[agent]
+timeout_sec = 1800
+setup_timeout_sec = 600
+
+[environment]
+build_timeout_sec = 600
+cpus = 2
+memory_mb = 4096
+allow_internet = true
+
+[[environment.mcp_servers]]
+name = "qsim"
+transport = "streamable-http"
+url = "http://qsim:8123/mcp"
+
+[verifier]
+timeout_sec = 600
+# Separate verifier environment (built from tests/Dockerfile): it carries the
+# hidden state reconstruction + authoritative scorer while the agent's `main`
+# mounts only public materials, so scoring anchors never reach the agent.
+environment_mode = "separate"
+
+# Harbor needs an EXPLICIT verifier image for separate mode (it does not
+# auto-build tests/Dockerfile).
+# Build: docker build -t qiqcbench-clbcs-verifier -f tests/Dockerfile tests/
+[verifier.environment]
+docker_image = "qiqcbench-clbcs-verifier:latest"
+
+[verifier.env]
+QIQCBENCH_VERIFIER_ARTIFACTS_DIR = "/logs/verifier/artifacts"
+# The hidden scorer's construction.py resolves the public Hamiltonian + hidden
+# scorer YAML under this root; the qiqcbench-qsim base image bakes the configs
+# tree at /app/qiqcbench_configs (symlinked to /app/configs).
+QIQCBENCH_TASK_MATERIALS_DIR = "/app/qiqcbench_configs/task_materials"
+
+# Collect the agent's qsim evidence from the sidecar into the verifier container
+# at the same /qsim_logs/... paths test.sh reads.
+[[artifacts]]
+source = "/qsim_logs/experiment_log.jsonl"
+service = "qsim"
+
+[[artifacts]]
+source = "/qsim_logs/final_answer.json"
+service = "qsim"
+
+# Complete raw job-result evidence published by qsim: keeps the scientific
+# record replayable and artifact-closed instead of transcript-only.
+[[artifacts]]
+source = "/qsim_logs/public_job_results"
+service = "qsim"

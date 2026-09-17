@@ -1,0 +1,32 @@
+# Harbor run: time_budgeted_shadow_surrogate_60q with codex (gpt-5.6-sol, xhigh).
+# Build images: docker build -t qiqcbench-agent docker/agent/
+#   uv run python tools/build_qsim_images.py --tasks time_budgeted_shadow_surrogate_60q
+# Auth: export OPENAI_API_KEY=<key>, plus OPENAI_BASE_URL for an OpenAI-compatible endpoint.
+# Run: harbor run -c configs/harbor/time_budgeted_shadow_surrogate_60q_codex.yaml
+jobs_dir: jobs
+n_attempts: 1
+n_concurrent_trials: 1
+environment_build_timeout_multiplier: 2
+retry:
+  max_retries: 0
+
+environment:
+  type: docker
+  force_build: false
+  delete: false
+  env:
+    QSIM_BACKEND_MODE: simulator
+
+agents:
+  - name: codex
+    model_name: gpt-5.6-sol
+    kwargs:
+      reasoning_effort: xhigh
+      # Pin the client version for reproducible runs. This development config
+      # uses one attempt with automatic retries disabled.
+      version: "0.146.1"
+
+datasets:
+  - path: harbor_tasks
+    task_names:
+      - time_budgeted_shadow_surrogate_60q

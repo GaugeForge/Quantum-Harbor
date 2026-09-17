@@ -1,0 +1,58 @@
+version = "1.0"
+
+[metadata]
+author_name = "QIQCBench"
+difficulty = "hard"
+category = "quantum-benchmarking"
+tags = ["quantum-error-correction", "surface-code", "lattice-surgery", "logical-cnot", "decoder-calibration", "detector-error-model", "correlated-noise", "leakage", "mwpm", "stim", "simulator", "qiqcbench"]
+description = "Calibrate the decoding layer of a small fault-tolerant processor — d=5 memory AND a lattice-surgery logical CNOT — on a ~114-qubit transmon-style 2D grid whose circuit-level noise is hidden. Run single-patch memory, merged-patch, and CNOT experiments; estimate detector error models from raw detection events (rates, two-point correlations, and detector-parity associations, incl. merge-window mechanisms that exist in no single-patch experiment); weight matching decoders; and clear two replay floors that the stale notebook recipe and the bulk-transfer/rescale shortcut each fail. The verifier replays both submitted DEMs + decoders on fresh hidden shots; pass iff the memory gate and the CNOT battery gate (average + per-entry cap) both clear. Simulator-only; MCP is the surface."
+
+[agent]
+timeout_sec = 10800
+setup_timeout_sec = 600
+
+[environment]
+build_timeout_sec = 600
+cpus = 2
+memory_mb = 6144
+allow_internet = true
+
+[[environment.mcp_servers]]
+name = "qsim"
+transport = "streamable-http"
+url = "http://qsim:8123/mcp"
+
+[verifier]
+timeout_sec = 1200
+# Run the verifier in a SEPARATE Harbor environment (built from tests/Dockerfile) so it
+# can import the in-tree hidden construction + replay scorer (stim + pymatching) while
+# the agent's `main` sees only public materials. Single scorer implementation -> no
+# parity drift.
+environment_mode = "separate"
+
+# Harbor needs an EXPLICIT verifier image for separate mode (it does not auto-build
+# tests/Dockerfile). Build:
+#   docker build -t qiqcbench-lcnot-verifier -f tests/Dockerfile tests/
+[verifier.environment]
+docker_image = "qiqcbench-lcnot-verifier:latest"
+
+[verifier.env]
+# In separate mode only /logs/verifier is collected back to the host, so keep the score
+# report (and copied evidence) under it alongside reward.txt.
+QIQCBENCH_VERIFIER_ARTIFACTS_DIR = "/logs/verifier/artifacts"
+
+# Collect the agent's qsim evidence from the sidecar into the verifier container at the
+# same /qsim_logs/... paths test.sh reads.
+[[artifacts]]
+source = "/qsim_logs/experiment_log.jsonl"
+service = "qsim"
+
+[[artifacts]]
+source = "/qsim_logs/final_answer.json"
+service = "qsim"
+
+# Complete raw job-result evidence published by qsim: keeps the scientific
+# record replayable and artifact-closed instead of transcript-only.
+[[artifacts]]
+source = "/qsim_logs/public_job_results"
+service = "qsim"

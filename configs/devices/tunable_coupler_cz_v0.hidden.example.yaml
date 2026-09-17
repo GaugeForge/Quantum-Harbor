@@ -1,0 +1,43 @@
+schema_version: 1
+device_id: tunable_coupler_cz_v0
+qtype: transmon_pair_tunable_coupler
+seed: 19074818                # from arXiv:1907.04818 (cryoscope)
+# Hidden truth — present only inside qsim. The true alpha_2/couplings, the coupler
+# curves, the flux-line settling, and the readout are the Stage-A recovery targets;
+# the stale notebook advertises optimistic/wrong values instead.
+omega_1_max_ghz: 4.500
+omega_2_ghz: 4.000
+omega_c_max_ghz: 6.500
+alpha_1_ghz: -0.300
+alpha_2_ghz: -0.330          # true (stale notebook says -0.300); crossing at 3.670 GHz
+arc_asym: 0.001              # q1 arc asymmetry (slightly breaks 1/f immunity)
+g12_ghz: 0.005
+gg_ghz2: 0.002537            # pins J_idle=0 @ Phi_c~0.266, J_gate~-10 MHz @ ~0.36
+zeta_scale: 1.0              # static ZZ: ~0 @ 0.266, ~-61 kHz @ 0.30 (stale idle)
+t1_us: 45.0
+t2_us: 32.0
+# Flux-line short-time settling (cryoscope target): parallel bank of DISCRETE
+# first-order poles on the 0.4 ns AWG grid (alpha_k = dt/(tau_k+dt)), tau
+# ascending. The earlier single 2.0 ns pole was the code
+# default, the published value, and the natural round-number guess;
+# these values are perturbed off the published Foxen/Rol figures.
+flux_settle_amplitudes: [0.38, 0.11]
+flux_settle_taus_ns: [1.7, 14.0]
+flux_noise_sigma_phi0: 5.0e-5
+robustness_offset_phi0: 3.0e-4
+readout_q1: {p_0_to_1: 0.020, p_1_to_0: 0.030}
+readout_q2: {p_0_to_1: 0.025, p_1_to_0: 0.035}
+stale_lab_notebook:
+  last_calibrated: "2026-03-02 (previous cooldown)"
+  alpha_2_mhz_claim: -300.0
+  coupling_j_mhz_claim: 7.0
+  g_mhz_claim: "68 / 68 / 5"
+  coupler_idle_flux_claim: 0.30
+  pulse_advice: "a unipolar flux pulse is sufficient; net-zero is unnecessary"
+  line_transfer_function_claim: "flux line is pre-corrected / approximately ideal; reuse last cooldown's filter"
+  readout_claim: "symmetric, ~0.99"
+  notes: >
+    Values above were accepted at the 2026-03-02 calibration, before the last
+    thermal cycle. The flux-line correction filter was carried over from that
+    cooldown's fit rather than re-measured, so pulses can be programmed directly;
+    the unipolar CZ pulse met spec at that calibration.

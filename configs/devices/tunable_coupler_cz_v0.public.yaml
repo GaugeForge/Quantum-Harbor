@@ -1,0 +1,36 @@
+schema_version: 1
+device_id: tunable_coupler_cz_v0
+qtype: transmon_pair_tunable_coupler
+# Two transmons (q1 flux-tunable, q2 fixed) + a tunable coupler, operated through
+# a finite-bit-depth AWG and a distorting flux line. Build a CZ via a net-zero
+# adiabatic flux pulse on the |11>-|02> crossing. Claimed calibration is the
+# previous cooldown's accepted values.
+n_levels: 4
+omega_1_max_ghz: 4.500
+omega_2_ghz: 4.000
+omega_c_max_ghz: 6.500
+claimed_alpha_1_mhz: -300.0
+claimed_alpha_2_mhz: -300.0      # previous-cooldown value
+claimed_g1c_mhz: 68.0
+claimed_g2c_mhz: 68.0
+claimed_g12_mhz: 5.0
+claimed_coupler_idle_flux: 0.30  # previous cooldown ("J=0, ZZ negligible")
+awg_sample_rate_ghz: 2.5
+awg_n_bits: 16
+awg_full_scale_phi0: 0.70
+awg_analog_bw_ghz: 0.70
+max_abs_flux_q1: 0.45
+gate_window_ns: [36.0, 100.0]
+measurement_return: level_population
+max_shots: 100000
+notes: |
+  Two transmons (q1 flux-tunable, q2 fixed) + a tunable coupler. Build a CZ via a
+  NET-ZERO adiabatic flux pulse on the |11>-|02> avoided crossing. You PROGRAM DAC
+  samples for q1.flux; the flux the qubit sees is your programmed waveform
+  DISTORTED by the flux line (short-time settling) — characterize it (cryoscope on
+  the quadratic sweet-spot arc) and predistort. Claimed coupling/anharmonicity
+  values were accepted at the previous cooldown's calibration; measure the 1<->2
+  transition, the |11>-|02> crossing, J, and the
+  coupler J_eff(Phi_c)/zeta(Phi_c) curves in situ. The coupler flux sets BOTH the coupling
+  and the static ZZ; park the idle coupler where both vanish. Report the
+  single-qubit virtual-Z corrections. All run_* tools are async.

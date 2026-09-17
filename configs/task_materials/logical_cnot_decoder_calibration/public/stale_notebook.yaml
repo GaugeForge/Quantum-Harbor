@@ -1,0 +1,7 @@
+noise_model: 'the chip is uniform: all two-qubit gates ~0.35%, all T1 ~70 us; independent depolarizing noise is a fine model'
+routing_region: routing-region qubits were matched to the bulk in the last calibration campaign; use bulk numbers for them
+surgery_advice: the merge windows introduce no new error mechanisms beyond the bulk — reuse your memory DEM on the CNOT spacetime graph; at most rescale to the seam detector rates
+decoder_advice: decode the two patches independently; the joint parities are reliable as raw outcomes
+correlation_advice: treat detection events as independent
+budget_advice: memory characterization is all you need; the CNOT will follow
+note: Uniform chip, trustworthy routing region, no new physics in the merges, independent detections, independent patches.

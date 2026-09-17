@@ -1,0 +1,4888 @@
+{
+ "detector_order_rule": "detectors are emitted per round in (y,x) ancilla order, phases in schedule order (separate rounds, merged rounds, separate rounds), then the final readout block; only deterministic parities appear (first-round detectors exist only for the basis matching the preparation; merge/split transition detectors appear where the support change is justified by the routing preparation/measure-out).",
+ "detectors": [
+  {
+   "ancilla": [
+    2,
+    8
+   ],
+   "basis": "X",
+   "id": 0,
+   "kind": "first",
+   "round": 0
+  },
+  {
+   "ancilla": [
+    10,
+    8
+   ],
+   "basis": "X",
+   "id": 1,
+   "kind": "first",
+   "round": 0
+  },
+  {
+   "ancilla": [
+    4,
+    10
+   ],
+   "basis": "X",
+   "id": 2,
+   "kind": "first",
+   "round": 0
+  },
+  {
+   "ancilla": [
+    12,
+    10
+   ],
+   "basis": "X",
+   "id": 3,
+   "kind": "first",
+   "round": 0
+  },
+  {
+   "ancilla": [
+    2,
+    12
+   ],
+   "basis": "X",
+   "id": 4,
+   "kind": "first",
+   "round": 0
+  },
+  {
+   "ancilla": [
+    10,
+    12
+   ],
+   "basis": "X",
+   "id": 5,
+   "kind": "first",
+   "round": 0
+  },
+  {
+   "ancilla": [
+    4,
+    14
+   ],
+   "basis": "X",
+   "id": 6,
+   "kind": "first",
+   "round": 0
+  },
+  {
+   "ancilla": [
+    12,
+    14
+   ],
+   "basis": "X",
+   "id": 7,
+   "kind": "first",
+   "round": 0
+  },
+  {
+   "ancilla": [
+    2,
+    8
+   ],
+   "basis": "X",
+   "id": 8,
+   "kind": "pair",
+   "round": 1
+  },
+  {
+   "ancilla": [
+    10,
+    8
+   ],
+   "basis": "X",
+   "id": 9,
+   "kind": "pair",
+   "round": 1
+  },
+  {
+   "ancilla": [
+    2,
+    10
+   ],
+   "basis": "Z",
+   "id": 10,
+   "kind": "pair",
+   "round": 1
+  },
+  {
+   "ancilla": [
+    4,
+    10
+   ],
+   "basis": "X",
+   "id": 11,
+   "kind": "pair",
+   "round": 1
+  },
+  {
+   "ancilla": [
+    6,
+    10
+   ],
+   "basis": "Z",
+   "id": 12,
+   "kind": "pair",
+   "round": 1
+  },
+  {
+   "ancilla": [
+    10,
+    10
+   ],
+   "basis": "Z",
+   "id": 13,
+   "kind": "pair",
+   "round": 1
+  },
+  {
+   "ancilla": [
+    12,
+    10
+   ],
+   "basis": "X",
+   "id": 14,
+   "kind": "pair",
+   "round": 1
+  },
+  {
+   "ancilla": [
+    14,
+    10
+   ],
+   "basis": "Z",
+   "id": 15,
+   "kind": "pair",
+   "round": 1
+  },
+  {
+   "ancilla": [
+    0,
+    12
+   ],
+   "basis": "Z",
+   "id": 16,
+   "kind": "pair",
+   "round": 1
+  },
+  {
+   "ancilla": [
+    2,
+    12
+   ],
+   "basis": "X",
+   "id": 17,
+   "kind": "pair",
+   "round": 1
+  },
+  {
+   "ancilla": [
+    4,
+    12
+   ],
+   "basis": "Z",
+   "id": 18,
+   "kind": "pair",
+   "round": 1
+  },
+  {
+   "ancilla": [
+    8,
+    12
+   ],
+   "basis": "Z",
+   "id": 19,
+   "kind": "pair",
+   "round": 1
+  },
+  {
+   "ancilla": [
+    10,
+    12
+   ],
+   "basis": "X",
+   "id": 20,
+   "kind": "pair",
+   "round": 1
+  },
+  {
+   "ancilla": [
+    12,
+    12
+   ],
+   "basis": "Z",
+   "id": 21,
+   "kind": "pair",
+   "round": 1
+  },
+  {
+   "ancilla": [
+    4,
+    14
+   ],
+   "basis": "X",
+   "id": 22,
+   "kind": "pair",
+   "round": 1
+  },
+  {
+   "ancilla": [
+    12,
+    14
+   ],
+   "basis": "X",
+   "id": 23,
+   "kind": "pair",
+   "round": 1
+  },
+  {
+   "ancilla": [
+    2,
+    8
+   ],
+   "basis": "X",
+   "id": 24,
+   "kind": "pair",
+   "round": 2
+  },
+  {
+   "ancilla": [
+    10,
+    8
+   ],
+   "basis": "X",
+   "id": 25,
+   "kind": "pair",
+   "round": 2
+  },
+  {
+   "ancilla": [
+    2,
+    10
+   ],
+   "basis": "Z",
+   "id": 26,
+   "kind": "pair",
+   "round": 2
+  },
+  {
+   "ancilla": [
+    4,
+    10
+   ],
+   "basis": "X",
+   "id": 27,
+   "kind": "pair",
+   "round": 2
+  },
+  {
+   "ancilla": [
+    6,
+    10
+   ],
+   "basis": "Z",
+   "id": 28,
+   "kind": "pair",
+   "round": 2
+  },
+  {
+   "ancilla": [
+    10,
+    10
+   ],
+   "basis": "Z",
+   "id": 29,
+   "kind": "pair",
+   "round": 2
+  },
+  {
+   "ancilla": [
+    12,
+    10
+   ],
+   "basis": "X",
+   "id": 30,
+   "kind": "pair",
+   "round": 2
+  },
+  {
+   "ancilla": [
+    14,
+    10
+   ],
+   "basis": "Z",
+   "id": 31,
+   "kind": "pair",
+   "round": 2
+  },
+  {
+   "ancilla": [
+    0,
+    12
+   ],
+   "basis": "Z",
+   "id": 32,
+   "kind": "pair",
+   "round": 2
+  },
+  {
+   "ancilla": [
+    2,
+    12
+   ],
+   "basis": "X",
+   "id": 33,
+   "kind": "pair",
+   "round": 2
+  },
+  {
+   "ancilla": [
+    4,
+    12
+   ],
+   "basis": "Z",
+   "id": 34,
+   "kind": "pair",
+   "round": 2
+  },
+  {
+   "ancilla": [
+    8,
+    12
+   ],
+   "basis": "Z",
+   "id": 35,
+   "kind": "pair",
+   "round": 2
+  },
+  {
+   "ancilla": [
+    10,
+    12
+   ],
+   "basis": "X",
+   "id": 36,
+   "kind": "pair",
+   "round": 2
+  },
+  {
+   "ancilla": [
+    12,
+    12
+   ],
+   "basis": "Z",
+   "id": 37,
+   "kind": "pair",
+   "round": 2
+  },
+  {
+   "ancilla": [
+    4,
+    14
+   ],
+   "basis": "X",
+   "id": 38,
+   "kind": "pair",
+   "round": 2
+  },
+  {
+   "ancilla": [
+    12,
+    14
+   ],
+   "basis": "X",
+   "id": 39,
+   "kind": "pair",
+   "round": 2
+  },
+  {
+   "ancilla": [
+    2,
+    8
+   ],
+   "basis": "X",
+   "id": 40,
+   "kind": "pair",
+   "round": 3
+  },
+  {
+   "ancilla": [
+    6,
+    8
+   ],
+   "basis": "X",
+   "id": 41,
+   "kind": "pair",
+   "round": 3
+  },
+  {
+   "ancilla": [
+    10,
+    8
+   ],
+   "basis": "X",
+   "id": 42,
+   "kind": "pair",
+   "round": 3
+  },
+  {
+   "ancilla": [
+    2,
+    10
+   ],
+   "basis": "Z",
+   "id": 43,
+   "kind": "pair",
+   "round": 3
+  },
+  {
+   "ancilla": [
+    4,
+    10
+   ],
+   "basis": "X",
+   "id": 44,
+   "kind": "pair",
+   "round": 3
+  },
+  {
+   "ancilla": [
+    6,
+    10
+   ],
+   "basis": "Z",
+   "id": 45,
+   "kind": "pair",
+   "round": 3
+  },
+  {
+   "ancilla": [
+    8,
+    10
+   ],
+   "basis": "X",
+   "id": 46,
+   "kind": "pair",
+   "round": 3
+  },
+  {
+   "ancilla": [
+    10,
+    10
+   ],
+   "basis": "Z",
+   "id": 47,
+   "kind": "pair",
+   "round": 3
+  },
+  {
+   "ancilla": [
+    12,
+    10
+   ],
+   "basis": "X",
+   "id": 48,
+   "kind": "pair",
+   "round": 3
+  },
+  {
+   "ancilla": [
+    14,
+    10
+   ],
+   "basis": "Z",
+   "id": 49,
+   "kind": "pair",
+   "round": 3
+  },
+  {
+   "ancilla": [
+    0,
+    12
+   ],
+   "basis": "Z",
+   "id": 50,
+   "kind": "pair",
+   "round": 3
+  },
+  {
+   "ancilla": [
+    2,
+    12
+   ],
+   "basis": "X",
+   "id": 51,
+   "kind": "pair",
+   "round": 3
+  },
+  {
+   "ancilla": [
+    4,
+    12
+   ],
+   "basis": "Z",
+   "id": 52,
+   "kind": "pair",
+   "round": 3
+  },
+  {
+   "ancilla": [
+    6,
+    12
+   ],
+   "basis": "X",
+   "id": 53,
+   "kind": "pair",
+   "round": 3
+  },
+  {
+   "ancilla": [
+    8,
+    12
+   ],
+   "basis": "Z",
+   "id": 54,
+   "kind": "pair",
+   "round": 3
+  },
+  {
+   "ancilla": [
+    10,
+    12
+   ],
+   "basis": "X",
+   "id": 55,
+   "kind": "pair",
+   "round": 3
+  },
+  {
+   "ancilla": [
+    12,
+    12
+   ],
+   "basis": "Z",
+   "id": 56,
+   "kind": "pair",
+   "round": 3
+  },
+  {
+   "ancilla": [
+    4,
+    14
+   ],
+   "basis": "X",
+   "id": 57,
+   "kind": "pair",
+   "round": 3
+  },
+  {
+   "ancilla": [
+    8,
+    14
+   ],
+   "basis": "X",
+   "id": 58,
+   "kind": "pair",
+   "round": 3
+  },
+  {
+   "ancilla": [
+    12,
+    14
+   ],
+   "basis": "X",
+   "id": 59,
+   "kind": "pair",
+   "round": 3
+  },
+  {
+   "ancilla": [
+    2,
+    8
+   ],
+   "basis": "X",
+   "id": 60,
+   "kind": "pair",
+   "round": 4
+  },
+  {
+   "ancilla": [
+    6,
+    8
+   ],
+   "basis": "X",
+   "id": 61,
+   "kind": "pair",
+   "round": 4
+  },
+  {
+   "ancilla": [
+    10,
+    8
+   ],
+   "basis": "X",
+   "id": 62,
+   "kind": "pair",
+   "round": 4
+  },
+  {
+   "ancilla": [
+    2,
+    10
+   ],
+   "basis": "Z",
+   "id": 63,
+   "kind": "pair",
+   "round": 4
+  },
+  {
+   "ancilla": [
+    4,
+    10
+   ],
+   "basis": "X",
+   "id": 64,
+   "kind": "pair",
+   "round": 4
+  },
+  {
+   "ancilla": [
+    6,
+    10
+   ],
+   "basis": "Z",
+   "id": 65,
+   "kind": "pair",
+   "round": 4
+  },
+  {
+   "ancilla": [
+    8,
+    10
+   ],
+   "basis": "X",
+   "id": 66,
+   "kind": "pair",
+   "round": 4
+  },
+  {
+   "ancilla": [
+    10,
+    10
+   ],
+   "basis": "Z",
+   "id": 67,
+   "kind": "pair",
+   "round": 4
+  },
+  {
+   "ancilla": [
+    12,
+    10
+   ],
+   "basis": "X",
+   "id": 68,
+   "kind": "pair",
+   "round": 4
+  },
+  {
+   "ancilla": [
+    14,
+    10
+   ],
+   "basis": "Z",
+   "id": 69,
+   "kind": "pair",
+   "round": 4
+  },
+  {
+   "ancilla": [
+    0,
+    12
+   ],
+   "basis": "Z",
+   "id": 70,
+   "kind": "pair",
+   "round": 4
+  },
+  {
+   "ancilla": [
+    2,
+    12
+   ],
+   "basis": "X",
+   "id": 71,
+   "kind": "pair",
+   "round": 4
+  },
+  {
+   "ancilla": [
+    4,
+    12
+   ],
+   "basis": "Z",
+   "id": 72,
+   "kind": "pair",
+   "round": 4
+  },
+  {
+   "ancilla": [
+    6,
+    12
+   ],
+   "basis": "X",
+   "id": 73,
+   "kind": "pair",
+   "round": 4
+  },
+  {
+   "ancilla": [
+    8,
+    12
+   ],
+   "basis": "Z",
+   "id": 74,
+   "kind": "pair",
+   "round": 4
+  },
+  {
+   "ancilla": [
+    10,
+    12
+   ],
+   "basis": "X",
+   "id": 75,
+   "kind": "pair",
+   "round": 4
+  },
+  {
+   "ancilla": [
+    12,
+    12
+   ],
+   "basis": "Z",
+   "id": 76,
+   "kind": "pair",
+   "round": 4
+  },
+  {
+   "ancilla": [
+    4,
+    14
+   ],
+   "basis": "X",
+   "id": 77,
+   "kind": "pair",
+   "round": 4
+  },
+  {
+   "ancilla": [
+    8,
+    14
+   ],
+   "basis": "X",
+   "id": 78,
+   "kind": "pair",
+   "round": 4
+  },
+  {
+   "ancilla": [
+    12,
+    14
+   ],
+   "basis": "X",
+   "id": 79,
+   "kind": "pair",
+   "round": 4
+  },
+  {
+   "ancilla": [
+    2,
+    8
+   ],
+   "basis": "X",
+   "id": 80,
+   "kind": "pair",
+   "round": 5
+  },
+  {
+   "ancilla": [
+    10,
+    8
+   ],
+   "basis": "X",
+   "id": 81,
+   "kind": "pair",
+   "round": 5
+  },
+  {
+   "ancilla": [
+    2,
+    10
+   ],
+   "basis": "Z",
+   "id": 82,
+   "kind": "pair",
+   "round": 5
+  },
+  {
+   "ancilla": [
+    4,
+    10
+   ],
+   "basis": "X",
+   "id": 83,
+   "kind": "pair",
+   "round": 5
+  },
+  {
+   "ancilla": [
+    6,
+    10
+   ],
+   "basis": "Z",
+   "id": 84,
+   "kind": "pair",
+   "round": 5
+  },
+  {
+   "ancilla": [
+    10,
+    10
+   ],
+   "basis": "Z",
+   "id": 85,
+   "kind": "pair",
+   "round": 5
+  },
+  {
+   "ancilla": [
+    12,
+    10
+   ],
+   "basis": "X",
+   "id": 86,
+   "kind": "pair",
+   "round": 5
+  },
+  {
+   "ancilla": [
+    14,
+    10
+   ],
+   "basis": "Z",
+   "id": 87,
+   "kind": "pair",
+   "round": 5
+  },
+  {
+   "ancilla": [
+    0,
+    12
+   ],
+   "basis": "Z",
+   "id": 88,
+   "kind": "pair",
+   "round": 5
+  },
+  {
+   "ancilla": [
+    2,
+    12
+   ],
+   "basis": "X",
+   "id": 89,
+   "kind": "pair",
+   "round": 5
+  },
+  {
+   "ancilla": [
+    4,
+    12
+   ],
+   "basis": "Z",
+   "id": 90,
+   "kind": "pair",
+   "round": 5
+  },
+  {
+   "ancilla": [
+    8,
+    12
+   ],
+   "basis": "Z",
+   "id": 91,
+   "kind": "pair",
+   "round": 5
+  },
+  {
+   "ancilla": [
+    10,
+    12
+   ],
+   "basis": "X",
+   "id": 92,
+   "kind": "pair",
+   "round": 5
+  },
+  {
+   "ancilla": [
+    12,
+    12
+   ],
+   "basis": "Z",
+   "id": 93,
+   "kind": "pair",
+   "round": 5
+  },
+  {
+   "ancilla": [
+    4,
+    14
+   ],
+   "basis": "X",
+   "id": 94,
+   "kind": "pair",
+   "round": 5
+  },
+  {
+   "ancilla": [
+    12,
+    14
+   ],
+   "basis": "X",
+   "id": 95,
+   "kind": "pair",
+   "round": 5
+  },
+  {
+   "ancilla": [
+    2,
+    8
+   ],
+   "basis": "X",
+   "id": 96,
+   "kind": "pair",
+   "round": 6
+  },
+  {
+   "ancilla": [
+    10,
+    8
+   ],
+   "basis": "X",
+   "id": 97,
+   "kind": "pair",
+   "round": 6
+  },
+  {
+   "ancilla": [
+    2,
+    10
+   ],
+   "basis": "Z",
+   "id": 98,
+   "kind": "pair",
+   "round": 6
+  },
+  {
+   "ancilla": [
+    4,
+    10
+   ],
+   "basis": "X",
+   "id": 99,
+   "kind": "pair",
+   "round": 6
+  },
+  {
+   "ancilla": [
+    6,
+    10
+   ],
+   "basis": "Z",
+   "id": 100,
+   "kind": "pair",
+   "round": 6
+  },
+  {
+   "ancilla": [
+    10,
+    10
+   ],
+   "basis": "Z",
+   "id": 101,
+   "kind": "pair",
+   "round": 6
+  },
+  {
+   "ancilla": [
+    12,
+    10
+   ],
+   "basis": "X",
+   "id": 102,
+   "kind": "pair",
+   "round": 6
+  },
+  {
+   "ancilla": [
+    14,
+    10
+   ],
+   "basis": "Z",
+   "id": 103,
+   "kind": "pair",
+   "round": 6
+  },
+  {
+   "ancilla": [
+    0,
+    12
+   ],
+   "basis": "Z",
+   "id": 104,
+   "kind": "pair",
+   "round": 6
+  },
+  {
+   "ancilla": [
+    2,
+    12
+   ],
+   "basis": "X",
+   "id": 105,
+   "kind": "pair",
+   "round": 6
+  },
+  {
+   "ancilla": [
+    4,
+    12
+   ],
+   "basis": "Z",
+   "id": 106,
+   "kind": "pair",
+   "round": 6
+  },
+  {
+   "ancilla": [
+    8,
+    12
+   ],
+   "basis": "Z",
+   "id": 107,
+   "kind": "pair",
+   "round": 6
+  },
+  {
+   "ancilla": [
+    10,
+    12
+   ],
+   "basis": "X",
+   "id": 108,
+   "kind": "pair",
+   "round": 6
+  },
+  {
+   "ancilla": [
+    12,
+    12
+   ],
+   "basis": "Z",
+   "id": 109,
+   "kind": "pair",
+   "round": 6
+  },
+  {
+   "ancilla": [
+    4,
+    14
+   ],
+   "basis": "X",
+   "id": 110,
+   "kind": "pair",
+   "round": 6
+  },
+  {
+   "ancilla": [
+    12,
+    14
+   ],
+   "basis": "X",
+   "id": 111,
+   "kind": "pair",
+   "round": 6
+  },
+  {
+   "ancilla": [
+    2,
+    8
+   ],
+   "basis": "X",
+   "id": 112,
+   "kind": "final",
+   "round": 7
+  },
+  {
+   "ancilla": [
+    10,
+    8
+   ],
+   "basis": "X",
+   "id": 113,
+   "kind": "final",
+   "round": 7
+  },
+  {
+   "ancilla": [
+    4,
+    10
+   ],
+   "basis": "X",
+   "id": 114,
+   "kind": "final",
+   "round": 7
+  },
+  {
+   "ancilla": [
+    12,
+    10
+   ],
+   "basis": "X",
+   "id": 115,
+   "kind": "final",
+   "round": 7
+  },
+  {
+   "ancilla": [
+    2,
+    12
+   ],
+   "basis": "X",
+   "id": 116,
+   "kind": "final",
+   "round": 7
+  },
+  {
+   "ancilla": [
+    10,
+    12
+   ],
+   "basis": "X",
+   "id": 117,
+   "kind": "final",
+   "round": 7
+  },
+  {
+   "ancilla": [
+    4,
+    14
+   ],
+   "basis": "X",
+   "id": 118,
+   "kind": "final",
+   "round": 7
+  },
+  {
+   "ancilla": [
+    12,
+    14
+   ],
+   "basis": "X",
+   "id": 119,
+   "kind": "final",
+   "round": 7
+  }
+ ],
+ "include_transitions": true,
+ "matching_graph_nominal": [
+  {
+   "detectors": [
+    0
+   ],
+   "flips_observables": [
+    "obs_logical"
+   ],
+   "p_nominal": 0.00571146
+  },
+  {
+   "detectors": [
+    0,
+    2
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00571146
+  },
+  {
+   "detectors": [
+    0,
+    8
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    0,
+    11
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    0,
+    17
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    1
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00571146
+  },
+  {
+   "detectors": [
+    1,
+    3
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00571146
+  },
+  {
+   "detectors": [
+    1,
+    9
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    1,
+    14
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    1,
+    20
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    2
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01135768
+  },
+  {
+   "detectors": [
+    2,
+    4
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00293047
+  },
+  {
+   "detectors": [
+    2,
+    11
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    2,
+    17
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00372636
+  },
+  {
+   "detectors": [
+    2,
+    22
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    3
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01135768
+  },
+  {
+   "detectors": [
+    3,
+    5
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00293047
+  },
+  {
+   "detectors": [
+    3,
+    14
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    3,
+    20
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00372636
+  },
+  {
+   "detectors": [
+    3,
+    23
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    4
+   ],
+   "flips_observables": [
+    "obs_logical"
+   ],
+   "p_nominal": 0.01135768
+  },
+  {
+   "detectors": [
+    4,
+    6
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00293047
+  },
+  {
+   "detectors": [
+    4,
+    17
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    4,
+    22
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    5
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01135768
+  },
+  {
+   "detectors": [
+    5,
+    7
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00293047
+  },
+  {
+   "detectors": [
+    5,
+    20
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    5,
+    23
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    6
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.0038592
+  },
+  {
+   "detectors": [
+    6,
+    22
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    7
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.0038592
+  },
+  {
+   "detectors": [
+    7,
+    23
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    8
+   ],
+   "flips_observables": [
+    "obs_logical"
+   ],
+   "p_nominal": 0.00788642
+  },
+  {
+   "detectors": [
+    8,
+    11
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00696522
+  },
+  {
+   "detectors": [
+    8,
+    24
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    8,
+    27
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    8,
+    33
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    9
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00788642
+  },
+  {
+   "detectors": [
+    9,
+    14
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00696522
+  },
+  {
+   "detectors": [
+    9,
+    25
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    9,
+    30
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    9,
+    36
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    10
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.03409954
+  },
+  {
+   "detectors": [
+    10,
+    16
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00326318
+  },
+  {
+   "detectors": [
+    10,
+    18
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00788642
+  },
+  {
+   "detectors": [
+    10,
+    26
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    10,
+    32
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00279739
+  },
+  {
+   "detectors": [
+    11
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01925818
+  },
+  {
+   "detectors": [
+    11,
+    17
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    11,
+    27
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    11,
+    33
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00372636
+  },
+  {
+   "detectors": [
+    11,
+    38
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    12
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.02129167
+  },
+  {
+   "detectors": [
+    12,
+    18
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00326318
+  },
+  {
+   "detectors": [
+    12,
+    26
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    12,
+    28
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    12,
+    34
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00279739
+  },
+  {
+   "detectors": [
+    13
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.03409954
+  },
+  {
+   "detectors": [
+    13,
+    19
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00326318
+  },
+  {
+   "detectors": [
+    13,
+    21
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00788642
+  },
+  {
+   "detectors": [
+    13,
+    29
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    13,
+    35
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00279739
+  },
+  {
+   "detectors": [
+    14
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01925818
+  },
+  {
+   "detectors": [
+    14,
+    20
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    14,
+    30
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    14,
+    36
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00372636
+  },
+  {
+   "detectors": [
+    14,
+    39
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    15
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.02129167
+  },
+  {
+   "detectors": [
+    15,
+    21
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00326318
+  },
+  {
+   "detectors": [
+    15,
+    29
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    15,
+    31
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    15,
+    37
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00279739
+  },
+  {
+   "detectors": [
+    16
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.02485935
+  },
+  {
+   "detectors": [
+    16,
+    32
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    17
+   ],
+   "flips_observables": [
+    "obs_logical"
+   ],
+   "p_nominal": 0.01925818
+  },
+  {
+   "detectors": [
+    17,
+    22
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00696522
+  },
+  {
+   "detectors": [
+    17,
+    33
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    17,
+    38
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    18
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.03409954
+  },
+  {
+   "detectors": [
+    18,
+    26
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    18,
+    32
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    18,
+    34
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    19
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.02485935
+  },
+  {
+   "detectors": [
+    19,
+    35
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    20
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01925818
+  },
+  {
+   "detectors": [
+    20,
+    23
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00696522
+  },
+  {
+   "detectors": [
+    20,
+    36
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    20,
+    39
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    21
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.03409954
+  },
+  {
+   "detectors": [
+    21,
+    29
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    21,
+    35
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    21,
+    37
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    22
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00788642
+  },
+  {
+   "detectors": [
+    22,
+    38
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    23
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00788642
+  },
+  {
+   "detectors": [
+    23,
+    39
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    24
+   ],
+   "flips_observables": [
+    "obs_logical"
+   ],
+   "p_nominal": 0.00788642
+  },
+  {
+   "detectors": [
+    24,
+    27
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00696522
+  },
+  {
+   "detectors": [
+    24,
+    40
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    24,
+    44
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    24,
+    51
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    25
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00604231
+  },
+  {
+   "detectors": [
+    25,
+    30
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00696522
+  },
+  {
+   "detectors": [
+    25,
+    42
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    25,
+    46
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    25,
+    48
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    25,
+    55
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    26
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01745669
+  },
+  {
+   "detectors": [
+    26,
+    32
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    26,
+    34
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00972364
+  },
+  {
+   "detectors": [
+    26,
+    43
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    26,
+    50
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00279739
+  },
+  {
+   "detectors": [
+    27
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01925818
+  },
+  {
+   "detectors": [
+    27,
+    33
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    27,
+    44
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01270962
+  },
+  {
+   "detectors": [
+    27,
+    51
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00372636
+  },
+  {
+   "detectors": [
+    27,
+    53
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    27,
+    57
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    28
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01350779
+  },
+  {
+   "detectors": [
+    28,
+    34
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    28,
+    35
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00571146
+  },
+  {
+   "detectors": [
+    28,
+    43
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    28,
+    45
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    28,
+    52
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00372636
+  },
+  {
+   "detectors": [
+    29
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.02105295
+  },
+  {
+   "detectors": [
+    29,
+    35
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    29,
+    37
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00972364
+  },
+  {
+   "detectors": [
+    29,
+    45
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    29,
+    47
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    29,
+    54
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00372636
+  },
+  {
+   "detectors": [
+    30
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01925818
+  },
+  {
+   "detectors": [
+    30,
+    36
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    30,
+    48
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    30,
+    55
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00372636
+  },
+  {
+   "detectors": [
+    30,
+    59
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    31
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00972364
+  },
+  {
+   "detectors": [
+    31,
+    37
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    31,
+    47
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    31,
+    49
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    31,
+    56
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00279739
+  },
+  {
+   "detectors": [
+    32
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00972364
+  },
+  {
+   "detectors": [
+    32,
+    50
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    33
+   ],
+   "flips_observables": [
+    "obs_logical"
+   ],
+   "p_nominal": 0.01925818
+  },
+  {
+   "detectors": [
+    33,
+    38
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00696522
+  },
+  {
+   "detectors": [
+    33,
+    51
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    33,
+    57
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    34
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01745669
+  },
+  {
+   "detectors": [
+    34,
+    43
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    34,
+    50
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    34,
+    52
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    35
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01893619
+  },
+  {
+   "detectors": [
+    35,
+    45
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    35,
+    52
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    35,
+    54
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    36
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01925818
+  },
+  {
+   "detectors": [
+    36,
+    39
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00696522
+  },
+  {
+   "detectors": [
+    36,
+    55
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01270962
+  },
+  {
+   "detectors": [
+    36,
+    58
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    36,
+    59
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    37
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01745669
+  },
+  {
+   "detectors": [
+    37,
+    47
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    37,
+    54
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    37,
+    56
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    38
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00788642
+  },
+  {
+   "detectors": [
+    38,
+    57
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    39
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00788642
+  },
+  {
+   "detectors": [
+    39,
+    59
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    40
+   ],
+   "flips_observables": [
+    "obs_logical"
+   ],
+   "p_nominal": 0.00788642
+  },
+  {
+   "detectors": [
+    40,
+    44
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00696522
+  },
+  {
+   "detectors": [
+    40,
+    60
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    40,
+    64
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    40,
+    71
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    41
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01362008
+  },
+  {
+   "detectors": [
+    41,
+    44
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00326318
+  },
+  {
+   "detectors": [
+    41,
+    46
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00604231
+  },
+  {
+   "detectors": [
+    41,
+    61
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    41,
+    64
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00279739
+  },
+  {
+   "detectors": [
+    41,
+    66
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    41,
+    73
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    42,
+    46
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    42,
+    48
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00696522
+  },
+  {
+   "detectors": [
+    42,
+    62
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    42,
+    66
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00279739
+  },
+  {
+   "detectors": [
+    42,
+    68
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    42,
+    75
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    43
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01745669
+  },
+  {
+   "detectors": [
+    43,
+    50
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    43,
+    52
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00972364
+  },
+  {
+   "detectors": [
+    43,
+    63
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    43,
+    70
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00279739
+  },
+  {
+   "detectors": [
+    44
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00557912
+  },
+  {
+   "detectors": [
+    44,
+    51
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    44,
+    53
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00880589
+  },
+  {
+   "detectors": [
+    44,
+    64
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01362008
+  },
+  {
+   "detectors": [
+    44,
+    71
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00372636
+  },
+  {
+   "detectors": [
+    44,
+    73
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    44,
+    77
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    45
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.02105295
+  },
+  {
+   "detectors": [
+    45,
+    52
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    45,
+    54
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00972364
+  },
+  {
+   "detectors": [
+    45,
+    63
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    45,
+    65
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    45,
+    72
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00372636
+  },
+  {
+   "detectors": [
+    46
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01904722
+  },
+  {
+   "detectors": [
+    46,
+    53
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00326318
+  },
+  {
+   "detectors": [
+    46,
+    55
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00880589
+  },
+  {
+   "detectors": [
+    46,
+    66
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01362008
+  },
+  {
+   "detectors": [
+    46,
+    73
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00372636
+  },
+  {
+   "detectors": [
+    46,
+    75
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    46,
+    78
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    47
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.02105295
+  },
+  {
+   "detectors": [
+    47,
+    54
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    47,
+    56
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00972364
+  },
+  {
+   "detectors": [
+    47,
+    65
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    47,
+    67
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    47,
+    74
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00372636
+  },
+  {
+   "detectors": [
+    48
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01925818
+  },
+  {
+   "detectors": [
+    48,
+    55
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    48,
+    68
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    48,
+    75
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00372636
+  },
+  {
+   "detectors": [
+    48,
+    79
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    49
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00972364
+  },
+  {
+   "detectors": [
+    49,
+    56
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    49,
+    67
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    49,
+    69
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    49,
+    76
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00279739
+  },
+  {
+   "detectors": [
+    50
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00972364
+  },
+  {
+   "detectors": [
+    50,
+    70
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    51
+   ],
+   "flips_observables": [
+    "obs_logical"
+   ],
+   "p_nominal": 0.01925818
+  },
+  {
+   "detectors": [
+    51,
+    57
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00696522
+  },
+  {
+   "detectors": [
+    51,
+    71
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    51,
+    77
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    52
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.02105295
+  },
+  {
+   "detectors": [
+    52,
+    63
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    52,
+    70
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    52,
+    72
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    53
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.0244138
+  },
+  {
+   "detectors": [
+    53,
+    57
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00326318
+  },
+  {
+   "detectors": [
+    53,
+    58
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00511766
+  },
+  {
+   "detectors": [
+    53,
+    73
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01362008
+  },
+  {
+   "detectors": [
+    53,
+    77
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00279739
+  },
+  {
+   "detectors": [
+    53,
+    78
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    54
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.02105295
+  },
+  {
+   "detectors": [
+    54,
+    65
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    54,
+    72
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    54,
+    74
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    55
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00372636
+  },
+  {
+   "detectors": [
+    55,
+    58
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    55,
+    59
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00696522
+  },
+  {
+   "detectors": [
+    55,
+    75
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01362008
+  },
+  {
+   "detectors": [
+    55,
+    78
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00279739
+  },
+  {
+   "detectors": [
+    55,
+    79
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    56
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01745669
+  },
+  {
+   "detectors": [
+    56,
+    67
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    56,
+    74
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    56,
+    76
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    57
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00557912
+  },
+  {
+   "detectors": [
+    57,
+    77
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    58
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01904722
+  },
+  {
+   "detectors": [
+    58,
+    78
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    59
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00788642
+  },
+  {
+   "detectors": [
+    59,
+    79
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    60
+   ],
+   "flips_observables": [
+    "obs_logical"
+   ],
+   "p_nominal": 0.00788642
+  },
+  {
+   "detectors": [
+    60,
+    64
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00696522
+  },
+  {
+   "detectors": [
+    60,
+    80
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    60,
+    83
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    60,
+    89
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    61
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01904722
+  },
+  {
+   "detectors": [
+    61,
+    64
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    61,
+    66
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00511766
+  },
+  {
+   "detectors": [
+    61,
+    83
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    62
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00557912
+  },
+  {
+   "detectors": [
+    62,
+    66
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00326318
+  },
+  {
+   "detectors": [
+    62,
+    68
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00696522
+  },
+  {
+   "detectors": [
+    62,
+    81
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    62,
+    86
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    62,
+    92
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    63
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01745669
+  },
+  {
+   "detectors": [
+    63,
+    70
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    63,
+    72
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00972364
+  },
+  {
+   "detectors": [
+    63,
+    82
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    63,
+    88
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00279739
+  },
+  {
+   "detectors": [
+    64
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00372636
+  },
+  {
+   "detectors": [
+    64,
+    71
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    64,
+    73
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00880589
+  },
+  {
+   "detectors": [
+    64,
+    83
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01270962
+  },
+  {
+   "detectors": [
+    64,
+    89
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00372636
+  },
+  {
+   "detectors": [
+    64,
+    94
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    65
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.02105295
+  },
+  {
+   "detectors": [
+    65,
+    72
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    65,
+    74
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00972364
+  },
+  {
+   "detectors": [
+    65,
+    82
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    65,
+    84
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    65,
+    90
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00372636
+  },
+  {
+   "detectors": [
+    66
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.0244138
+  },
+  {
+   "detectors": [
+    66,
+    73
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00326318
+  },
+  {
+   "detectors": [
+    66,
+    75
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00880589
+  },
+  {
+   "detectors": [
+    66,
+    92
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    67
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.02105295
+  },
+  {
+   "detectors": [
+    67,
+    74
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    67,
+    76
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00972364
+  },
+  {
+   "detectors": [
+    67,
+    84
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    67,
+    85
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    67,
+    91
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00372636
+  },
+  {
+   "detectors": [
+    68
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01925818
+  },
+  {
+   "detectors": [
+    68,
+    75
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    68,
+    86
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    68,
+    92
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00372636
+  },
+  {
+   "detectors": [
+    68,
+    95
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    69
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00972364
+  },
+  {
+   "detectors": [
+    69,
+    76
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    69,
+    85
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    69,
+    87
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    69,
+    93
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00279739
+  },
+  {
+   "detectors": [
+    70
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00972364
+  },
+  {
+   "detectors": [
+    70,
+    88
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    71
+   ],
+   "flips_observables": [
+    "obs_logical"
+   ],
+   "p_nominal": 0.01925818
+  },
+  {
+   "detectors": [
+    71,
+    77
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00696522
+  },
+  {
+   "detectors": [
+    71,
+    89
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    71,
+    94
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    72
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.02105295
+  },
+  {
+   "detectors": [
+    72,
+    82
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    72,
+    88
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    72,
+    90
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    73
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01904722
+  },
+  {
+   "detectors": [
+    73,
+    77
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    73,
+    78
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00604231
+  },
+  {
+   "detectors": [
+    73,
+    94
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    74
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.02105295
+  },
+  {
+   "detectors": [
+    74,
+    84
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    74,
+    90
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    74,
+    91
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    75
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00557912
+  },
+  {
+   "detectors": [
+    75,
+    78
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00326318
+  },
+  {
+   "detectors": [
+    75,
+    79
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00696522
+  },
+  {
+   "detectors": [
+    75,
+    92
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01270962
+  },
+  {
+   "detectors": [
+    75,
+    95
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    76
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01745669
+  },
+  {
+   "detectors": [
+    76,
+    85
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    76,
+    91
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    76,
+    93
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    77,
+    94
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    78
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01362008
+  },
+  {
+   "detectors": [
+    79
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00788642
+  },
+  {
+   "detectors": [
+    79,
+    95
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    80
+   ],
+   "flips_observables": [
+    "obs_logical"
+   ],
+   "p_nominal": 0.00788642
+  },
+  {
+   "detectors": [
+    80,
+    83
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00696522
+  },
+  {
+   "detectors": [
+    80,
+    96
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    80,
+    99
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    80,
+    105
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    81
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00788642
+  },
+  {
+   "detectors": [
+    81,
+    86
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00696522
+  },
+  {
+   "detectors": [
+    81,
+    97
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    81,
+    102
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    81,
+    108
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    82
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01745669
+  },
+  {
+   "detectors": [
+    82,
+    88
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    82,
+    90
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00972364
+  },
+  {
+   "detectors": [
+    82,
+    98
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    82,
+    104
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00279739
+  },
+  {
+   "detectors": [
+    83
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01925818
+  },
+  {
+   "detectors": [
+    83,
+    89
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    83,
+    99
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    83,
+    105
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00372636
+  },
+  {
+   "detectors": [
+    83,
+    110
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    84
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.02695005
+  },
+  {
+   "detectors": [
+    84,
+    90
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    84,
+    91
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01394563
+  },
+  {
+   "detectors": [
+    84,
+    98
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    84,
+    100
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    84,
+    106
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00279739
+  },
+  {
+   "detectors": [
+    85
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01745669
+  },
+  {
+   "detectors": [
+    85,
+    91
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    85,
+    93
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00972364
+  },
+  {
+   "detectors": [
+    85,
+    101
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    85,
+    107
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00279739
+  },
+  {
+   "detectors": [
+    86
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01925818
+  },
+  {
+   "detectors": [
+    86,
+    92
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    86,
+    102
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    86,
+    108
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00372636
+  },
+  {
+   "detectors": [
+    86,
+    111
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    87
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00972364
+  },
+  {
+   "detectors": [
+    87,
+    93
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    87,
+    101
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    87,
+    103
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    87,
+    109
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00279739
+  },
+  {
+   "detectors": [
+    88
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00972364
+  },
+  {
+   "detectors": [
+    88,
+    104
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    89
+   ],
+   "flips_observables": [
+    "obs_logical"
+   ],
+   "p_nominal": 0.01925818
+  },
+  {
+   "detectors": [
+    89,
+    94
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00696522
+  },
+  {
+   "detectors": [
+    89,
+    105
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    89,
+    110
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    90
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.02105295
+  },
+  {
+   "detectors": [
+    90,
+    98
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    90,
+    104
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    90,
+    106
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    91
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.02161209
+  },
+  {
+   "detectors": [
+    91,
+    107
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    92
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01925818
+  },
+  {
+   "detectors": [
+    92,
+    95
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00696522
+  },
+  {
+   "detectors": [
+    92,
+    108
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    92,
+    111
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    93
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01745669
+  },
+  {
+   "detectors": [
+    93,
+    101
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    93,
+    107
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    93,
+    109
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    94
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00604231
+  },
+  {
+   "detectors": [
+    94,
+    110
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    95
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00788642
+  },
+  {
+   "detectors": [
+    95,
+    111
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    96
+   ],
+   "flips_observables": [
+    "obs_logical"
+   ],
+   "p_nominal": 0.00788642
+  },
+  {
+   "detectors": [
+    96,
+    99
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00696522
+  },
+  {
+   "detectors": [
+    96,
+    112
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    96,
+    114
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    96,
+    116
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    97
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00788642
+  },
+  {
+   "detectors": [
+    97,
+    102
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00696522
+  },
+  {
+   "detectors": [
+    97,
+    113
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    97,
+    115
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    97,
+    117
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    98
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.03409954
+  },
+  {
+   "detectors": [
+    98,
+    104
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00326318
+  },
+  {
+   "detectors": [
+    98,
+    106
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00788642
+  },
+  {
+   "detectors": [
+    99
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01925818
+  },
+  {
+   "detectors": [
+    99,
+    105
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    99,
+    114
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    99,
+    116
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00372636
+  },
+  {
+   "detectors": [
+    99,
+    118
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    100
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.02485935
+  },
+  {
+   "detectors": [
+    100,
+    106
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00326318
+  },
+  {
+   "detectors": [
+    101
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.03409954
+  },
+  {
+   "detectors": [
+    101,
+    107
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00326318
+  },
+  {
+   "detectors": [
+    101,
+    109
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00788642
+  },
+  {
+   "detectors": [
+    102
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01925818
+  },
+  {
+   "detectors": [
+    102,
+    108
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00419129
+  },
+  {
+   "detectors": [
+    102,
+    115
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    102,
+    117
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00372636
+  },
+  {
+   "detectors": [
+    102,
+    119
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00093421
+  },
+  {
+   "detectors": [
+    103
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.02485935
+  },
+  {
+   "detectors": [
+    103,
+    109
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00326318
+  },
+  {
+   "detectors": [
+    104
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.02129167
+  },
+  {
+   "detectors": [
+    105
+   ],
+   "flips_observables": [
+    "obs_logical"
+   ],
+   "p_nominal": 0.01925818
+  },
+  {
+   "detectors": [
+    105,
+    110
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00696522
+  },
+  {
+   "detectors": [
+    105,
+    116
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    105,
+    118
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    106
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.03409954
+  },
+  {
+   "detectors": [
+    107
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.02129167
+  },
+  {
+   "detectors": [
+    108
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01925818
+  },
+  {
+   "detectors": [
+    108,
+    111
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00696522
+  },
+  {
+   "detectors": [
+    108,
+    117
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01179745
+  },
+  {
+   "detectors": [
+    108,
+    119
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00186667
+  },
+  {
+   "detectors": [
+    109
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.03409954
+  },
+  {
+   "detectors": [
+    110
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00788642
+  },
+  {
+   "detectors": [
+    110,
+    118
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    111
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.00788642
+  },
+  {
+   "detectors": [
+    111,
+    119
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01088358
+  },
+  {
+   "detectors": [
+    112
+   ],
+   "flips_observables": [
+    "obs_logical"
+   ],
+   "p_nominal": 0.01212423
+  },
+  {
+   "detectors": [
+    112,
+    114
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01121097
+  },
+  {
+   "detectors": [
+    113
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01212423
+  },
+  {
+   "detectors": [
+    113,
+    115
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01121097
+  },
+  {
+   "detectors": [
+    114
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.0275023
+  },
+  {
+   "detectors": [
+    114,
+    116
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01121097
+  },
+  {
+   "detectors": [
+    115
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.0275023
+  },
+  {
+   "detectors": [
+    115,
+    117
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01121097
+  },
+  {
+   "detectors": [
+    116
+   ],
+   "flips_observables": [
+    "obs_logical"
+   ],
+   "p_nominal": 0.0275023
+  },
+  {
+   "detectors": [
+    116,
+    118
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01394563
+  },
+  {
+   "detectors": [
+    117
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.0275023
+  },
+  {
+   "detectors": [
+    117,
+    119
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01394563
+  },
+  {
+   "detectors": [
+    118
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01394563
+  },
+  {
+   "detectors": [
+    119
+   ],
+   "flips_observables": [],
+   "p_nominal": 0.01394563
+  }
+ ],
+ "n_detectors": 120,
+ "observables": [
+  "obs_logical"
+ ],
+ "rounds": 3,
+ "window": "xx"
+}

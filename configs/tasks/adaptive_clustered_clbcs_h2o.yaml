@@ -1,0 +1,28 @@
+schema_version: 1
+task_id: adaptive_clustered_clbcs_h2o
+device_id: clbcs_h2o_14q_v0
+default_backend_mode: simulator
+allowed_backend_modes:
+  - simulator
+default_surfaces:
+  - mcp
+allowed_surfaces:
+  - mcp
+description: |
+  Adaptive composite-measurement design for a fixed 14-qubit H2O/STO-3G Pauli
+  Hamiltonian (public) and one fixed hidden state.
+
+  Track A: design a 16-component C-LBCS scheme minimizing the public
+  state-independent average one-shot variance V_Haar (Zhang et al. 2305.02439).
+  Track B: optionally use up to the finite pilot budget on the hidden state,
+  then lock a second 16-component C-LBCS scheme + a sparse control-variate
+  vector for a single clustered production run (192 independent bases x 256
+  shots). Estimate the H2O energy with the pinned inverse-coverage
+  control-variate estimator and report a cluster-correct 1-sigma uncertainty.
+  The verifier scores the locked scheme and control variates as objects
+  (recomputed sigma_private), not reported scalars.
+
+  Simulator-only, MCP-only. Hidden-truth snapshot disabled (the state is the answer).
+enabled_capabilities:
+  - composite_measurement
+wall_clock_budget_s: 1800

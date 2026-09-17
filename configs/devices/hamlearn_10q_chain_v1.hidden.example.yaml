@@ -1,0 +1,77 @@
+schema_version: 1
+device_id: hamlearn_10q_chain_v1
+qtype: blackbox_analog_dynamics
+seed: 2026061719
+hamiltonian_terms:
+- pauli: XIIIIIIIII
+  coefficient: 0.31
+- pauli: ZIIIIIIIII
+  coefficient: -0.18
+- pauli: IYIIIIIIII
+  coefficient: 0.27
+- pauli: IIZIIIIIII
+  coefficient: 0.22
+- pauli: IIIXIIIIII
+  coefficient: -0.34
+- pauli: IIIIYIIIII
+  coefficient: 0.19
+- pauli: IIIIZIIIII
+  coefficient: 0.075
+- pauli: IIIIIZIIII
+  coefficient: -0.29
+- pauli: IIIIIIXIII
+  coefficient: 0.24
+- pauli: IIIIIIYIII
+  coefficient: 0.155
+- pauli: IIIIIIIYII
+  coefficient: -0.21
+- pauli: IIIIIIIIIX
+  coefficient: -0.26
+- pauli: ZZIIIIIIII
+  coefficient: 0.42
+- pauli: IXZIIIIIII
+  coefficient: -0.33
+- pauli: IZYIIIIIII
+  coefficient: 0.17
+- pauli: IIXXIIIIII
+  coefficient: -0.165
+- pauli: IIYYIIIIII
+  coefficient: 0.28
+- pauli: IIIZXIIIII
+  coefficient: -0.37
+- pauli: IIIIXXIIII
+  coefficient: 0.25
+- pauli: IIIIIXXIII
+  coefficient: 0.155
+- pauli: IIIIIYZIII
+  coefficient: -0.31
+- pauli: IIIIIIZZII
+  coefficient: 0.45
+- pauli: IIIIIIIXYI
+  coefficient: 0.23
+- pauli: IIIIIIIIYX
+  coefficient: -0.27
+stale_lab_notebook:
+  coefficients_rad_per_us:
+    X0: 0.29
+    Z0: -0.1
+    Y1: 0.25
+    Z2: 0.13
+    X3: -0.32
+    Y4: 0.11
+    Z5: -0.16
+    X6: 0.18
+    Y7: -0.16
+    Z9: -0.22
+    Z0Z1: 0.2
+    X1Z2: -0.15
+    Y2Y3: 0.1
+    Z3X4: -0.36
+    X4X5: 0.21
+    Z6Z7: 0.12
+    X7Y8: 0.18
+    X0Y1: 0.14
+    Z7Z8: -0.19
+    X8X9: -0.15
+  note: Historical, unverified coefficient estimates from an earlier device characterization. Entries may be biased, missing, or mislabeled. Current-device qsim evidence is authoritative.
+  reliability: stale; use only as a weak prior

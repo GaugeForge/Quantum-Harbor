@@ -1,0 +1,31 @@
+schema_version: 3
+task_id: adaptive_clustered_clbcs_h2o
+public_hamiltonian_sha256: 54ef4be47b66badfaa3785d39144b06e1941b05a5bedc08b744731ad8683fc3e
+num_components: 16
+coverage_floor: 1.0e-9
+production_settings: 192
+production_shots: 256
+max_control_variates: 192
+pilot_max_settings: 96
+pilot_max_shots: 24576
+track_a_thresholds:
+  pass: 600.0
+  bronze: 590.0
+  silver: 582.0
+  gold: 575.0
+track_b_thresholds:
+  pass: 0.044
+  bronze: 0.042
+  silver: 0.040
+  gold: 0.038
+track_a_comparison_decimals: 2
+track_b_comparison_decimals: 4
+energy_report_abs_tolerance_hartree: 0.0001
+uncertainty_report_abs_tolerance_hartree: 0.0001
+points_validity: 10
+points_track_a: 20
+points_track_b: 50
+points_energy: 10
+points_uncertainty: 10
+best_known_track_a_v_haar: 570.2888640196696
+best_known_track_b_sigma: 0.0367446746005135

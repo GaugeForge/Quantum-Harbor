@@ -1,0 +1,36 @@
+schema_version: 1
+task_id: tunable_coupler_cz_netzero
+device_id: tunable_coupler_cz_v0
+default_backend_mode: simulator
+allowed_backend_modes:
+  - simulator
+enabled_capabilities:
+  - basic_measurement
+  - netzero_flux_control
+default_surfaces:
+  - mcp
+allowed_surfaces:
+  - mcp
+description: |
+  Build a high-fidelity controlled-Z on a tunable-coupler transmon pair via a
+  net-zero adiabatic flux pulse on the |11>-|02> avoided crossing, working through
+  a realistic control stack (you program DAC samples; the qubit sees the flux-line
+  distorted waveform). Three stages:
+
+  A. Characterize the device (recover the q2 anharmonicity and the |11>-|02>
+     crossing, the effective coupling J / gap, the coupler J_eff(Phi_c) and
+     zeta(Phi_c) curves) AND the flux-line short-time settling (cryoscope on the
+     quadratic sweet-spot arc). The notebook carries previous-cooldown values,
+     including the "line is already corrected" claim.
+  B. Design the intended net-zero q1.flux trajectory (conditional phase pi, minimal
+     leakage) AND a predistortion so the PROGRAMMED DAC waveform, after the line,
+     realizes the intended flux (mind the DAC bit depth). Pick the coupler idle
+     bias (J=0 AND zeta~0) and the gate bias. Report the single-qubit virtual-Z.
+  C. Verify on the simulator: conditional phase, leakage, fidelity, the net-zero
+     robustness advantage under an injected flux offset, the residual idle ZZ, and
+     the predistortion residual.
+
+  Control: run_flux_pulse (program q1.flux DAC samples + coupler bias + prep/
+  tomography rotations + optional idle; level-resolved readout). All run_* tools
+  are async: submit, then poll get_job_result.
+wall_clock_budget_s: 9000

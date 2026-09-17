@@ -1,0 +1,65 @@
+version = "1.0"
+
+[metadata]
+author_name = "QIQCBench"
+difficulty = "hard"
+category = "quantum-experiment-control"
+tags = ["analog", "hamiltonian-learning", "time-budget", "qiqcbench"]
+description = "Time-budgeted Hamiltonian learning on a 10-qubit black-box analog device. Learn the hidden coefficient vector of a sparse nearest-neighbor Hamiltonian from raw probe outcomes under a normalized interrogation-time budget; scored by worst-case and relative full-vector coefficient error."
+
+[agent]
+timeout_sec = 3600
+setup_timeout_sec = 600
+
+[environment]
+build_timeout_sec = 600
+cpus = 2
+memory_mb = 4096
+allow_internet = true
+
+[[environment.mcp_servers]]
+name = "qsim"
+transport = "streamable-http"
+url = "http://qsim:8123/mcp"
+
+[verifier]
+timeout_sec = 300
+# Run the verifier in a SEPARATE Harbor environment (built from tests/Dockerfile):
+# the hidden scorer YAML (omega_star) is a complete answer key, so it must never
+# enter the agent's `main` container — not even at verification time.
+environment_mode = "separate"
+
+# Harbor needs an EXPLICIT verifier image for separate mode (it does NOT
+# auto-build tests/Dockerfile). Build:
+#   uv run python tools/build_qsim_images.py --tasks time_budgeted_hamlearn_10q
+[verifier.environment]
+docker_image = "qiqcbench-hamlearn-verifier:latest"
+
+[verifier.env]
+# In separate mode only /logs/verifier is collected back to the host, so keep
+# the score report (and copied evidence) under it alongside reward.txt.
+QIQCBENCH_VERIFIER_ARTIFACTS_DIR = "/logs/verifier/artifacts"
+QIQCBENCH_TASK_PUBLIC_DIR = "/task_materials"
+# The answer key is baked into the separately built verifier image from the
+# allowlisted verifier context. It never enters the trial's generic artifacts.
+QIQCBENCH_HIDDEN_SCORER_PATH = "/verifier/private/hidden_scorer.yaml"
+
+# Collect the agent's qsim evidence from the sidecar into the verifier container.
+[[artifacts]]
+source = "/qsim_logs/experiment_log.jsonl"
+service = "qsim"
+
+[[artifacts]]
+source = "/qsim_logs/final_answer.json"
+service = "qsim"
+
+# Complete raw job-result evidence published by qsim: keeps the scientific
+# record replayable and artifact-closed instead of transcript-only.
+[[artifacts]]
+source = "/qsim_logs/public_job_results"
+service = "qsim"
+
+# The exact public materials the agent saw, for the digest cross-check.
+[[artifacts]]
+source = "/task_materials"
+service = "main"

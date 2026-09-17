@@ -1,0 +1,79 @@
+cff-version: 1.2.0
+title: "Quantum-Harbor: A virtual laboratory for verified autonomy in quantum engineering"
+message: "If you use Quantum-Harbor or QIQCBench, please cite the paper and this software."
+type: software
+version: 0.0.1
+date-released: "2026-04-26"
+license: MIT
+repository-code: "https://github.com/GaugeForge/Quantum-Harbor"
+abstract: >
+  Reliable quantum engineering is essential for turning quantum phenomena into
+  practical technologies. As quantum platforms grow in scale and complexity,
+  their characterization and operation require increasing human effort and
+  coordination. Scientific artificial intelligence agents, which can plan
+  experiments, operate instruments, and analyze observations, offer a promising
+  route towards autonomous quantum engineering. Yet whether current agents can
+  perform reliably in this setting has not been systematically established. To
+  fill this gap, we developed Quantum-Harbor, a virtual laboratory that provides
+  a controlled execution environment for agents to interact with quantum
+  systems. This design enables direct verification of both the actions taken and
+  the conclusions drawn. Building on this framework, we introduce QIQCBench, a
+  benchmark of 49 expert-authored tasks spanning multiple layers including
+  calibration and control, error correction and compilation, sensing and
+  networking. Across 17 frontier agentic systems, QIQCBench reveals wide
+  variation in verified performance. These results expose a substantial gap
+  between demonstrating capability and achieving reliable operation, and
+  establish Quantum-Harbor as a foundation for measuring progress towards
+  verified autonomy in quantum engineering.
+authors:
+  - family-names: "Guo"
+    given-names: "Naixu"
+  - family-names: "Li"
+    given-names: "Changhao"
+  - family-names: "Cheng"
+    given-names: "Siyu"
+  - family-names: "Tang"
+    given-names: "Qicheng"
+  - family-names: "Luo"
+    given-names: "Binzhao"
+  - family-names: "Li"
+    given-names: "Bikun"
+  - family-names: "Du"
+    given-names: "Yuxuan"
+  - family-names: "Ru"
+    given-names: "Shihao"
+  - family-names: "Cai"
+    given-names: "Jiaqi"
+keywords:
+  - quantum-computing
+  - quantum-engineering
+  - benchmark
+  - agent-evaluation
+  - large-language-models
+  - verified-autonomy
+  - mcp
+preferred-citation:
+  type: article
+  title: "Evaluating Verified Autonomy in Quantum Engineering"
+  authors:
+    - family-names: "Guo"
+      given-names: "Naixu"
+    - family-names: "Li"
+      given-names: "Changhao"
+    - family-names: "Cheng"
+      given-names: "Siyu"
+    - family-names: "Tang"
+      given-names: "Qicheng"
+    - family-names: "Luo"
+      given-names: "Binzhao"
+    - family-names: "Li"
+      given-names: "Bikun"
+    - family-names: "Du"
+      given-names: "Yuxuan"
+    - family-names: "Ru"
+      given-names: "Shihao"
+    - family-names: "Cai"
+      given-names: "Jiaqi"
+  year: 2026
+  doi: "10.48550/arXiv.2609.17439"
+  url: "https://arxiv.org/abs/2609.17439v1"

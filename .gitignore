@@ -1,0 +1,86 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+build/
+dist/
+sdist/
+wheels/
+.eggs/
+pip-log.txt
+
+# --- uv / virtualenvs ---
+.venv/
+venv/
+env/
+ENV/
+.uv/
+# uv.lock IS committed (reproducible installs)
+
+# --- Test / lint caches ---
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+.cache
+
+# --- QIQCBench run artifacts ---
+# Harbor job outputs (per-run trial dirs).
+jobs/
+jobs_local/
+# Host-side run scratch and interrupted pulls.
+/downloaded_runs/
+*.qiqcbench-partial-*
+# Local experiment logs / scratch files.
+*.log
+scratch/
+sandbox/
+
+# --- Hidden device truth ---
+# Real hidden configs must NEVER be committed. Only *.example.yaml ships.
+configs/devices/*.hidden.yaml
+!configs/devices/*.hidden.example.yaml
+# Launch-provisioned instance directories are never committed.
+configs/task_materials/*/official_runtime/
+
+# --- Secrets ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+secrets/
+auth.json
+
+# --- Docker ---
+docker/**/build/
+
+# --- Editors / IDEs ---
+.vscode/
+.idea/
+.cursor/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+
+# --- OS junk ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Misc ---
+*.bak
+*.tmp
+*.orig
+node_modules/
+.worktrees/
+.opencode/

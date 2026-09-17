@@ -1,0 +1,64 @@
+services:
+  qsim:
+    image: qiqcbench-qsim:latest
+    build:
+      context: ../../..
+      dockerfile: docker/qsim/Dockerfile
+    pull_policy: never
+    healthcheck:
+      test: ["CMD", "bash", "/app/healthcheck.sh"]
+      interval: 5s
+      timeout: 10s
+      retries: 30
+      start_period: 20s
+    volumes:
+      - qsim_logs:/qsim_logs
+      # Poll-gated delivery: this nested volume is the only slice
+      # of /qsim_logs the agent can see. An oversized get_job_result payload
+      # materializes under it only while a terminal poll is handled, so
+      # unpolled raw_results/, experiment_log.jsonl, and final_answer.json
+      # stay invisible to main.
+      - qsim_public_job_results:/qsim_logs/public_job_results
+      # The agent writes its final answer on the sanctioned submission volume;
+      # qsim gets only a read-only view and verifies the caller-supplied digest.
+      - submission:/submission_artifacts:ro
+      # qsim MAY see the full configs tree (incl. hidden); main may NOT.
+      - ../../../configs:/app/configs:ro
+    environment:
+      - QSIM_HOST=0.0.0.0
+      - QSIM_PORT=8123
+      - QSIM_SUBMISSIONS_DIR=/submission_artifacts
+      - QSIM_DEVICE_ID=${QSIM_DEVICE_ID:-hamlearn_10q_chain_v1}
+      - QSIM_BACKEND_MODE=${QSIM_BACKEND_MODE:-simulator}
+      # Hamiltonian learning: the hidden coefficients are the answer, so the
+      # hidden-truth snapshot must NOT be written into the agent-readable
+      # qsim_logs mount.
+      - QSIM_SNAPSHOT_HIDDEN_TRUTH=0
+      - QIQCBENCH_CONFIGS=/app/configs
+      # The tracked fixed-instance fixture resolves through the read-only
+      # configs mount.
+      - QIQCBENCH_HIDDEN_PATH=/app/configs/devices/hamlearn_10q_chain_v1.hidden.example.yaml
+      - QIQCBENCH_TASK_ID=${QIQCBENCH_TASK_ID:-time_budgeted_hamlearn_10q}
+      - QIQCBENCH_SURFACES=${QIQCBENCH_SURFACES:-}
+
+  main:
+    volumes:
+      # Agent-visible qsim evidence: only the poll-gated
+      # public_job_results delivery volume; the full qsim_logs volume stays
+      # private to qsim and the Harbor artifact ferry.
+      - qsim_public_job_results:/qsim_logs/public_job_results:ro
+      # Programmatically assembled answers can be submitted without copying
+      # the two 111-value vectors through the model conversation.
+      - submission:/submission
+      - ../../../configs/task_materials/time_budgeted_hamlearn_10q/public:/task_materials:ro
+    environment:
+      # Proxy bypass for the in-cluster qsim MCP host (Docker may inject an HTTP
+      # proxy whose NO_PROXY omits `qsim`; Claude Code's client would then 502).
+      - no_proxy=qsim,localhost,127.0.0.1,host.docker.internal
+      - NO_PROXY=qsim,localhost,127.0.0.1,host.docker.internal
+      - QIQCBENCH_SURFACES=${QIQCBENCH_SURFACES:-}
+
+volumes:
+  qsim_logs:
+  qsim_public_job_results:
+  submission:

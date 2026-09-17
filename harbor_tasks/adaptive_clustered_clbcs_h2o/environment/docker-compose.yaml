@@ -1,0 +1,53 @@
+services:
+  qsim:
+    image: qiqcbench-qsim:latest
+    build:
+      context: ../../..
+      dockerfile: docker/qsim/Dockerfile
+    pull_policy: never
+    healthcheck:
+      test: ["CMD", "bash", "/app/healthcheck.sh"]
+      interval: 5s
+      timeout: 10s
+      retries: 30
+      start_period: 20s
+    volumes:
+      - qsim_logs:/qsim_logs
+      # Poll-gated delivery: this nested volume is the only slice
+      # of /qsim_logs the agent can see. An oversized get_job_result payload
+      # materializes under it only while a terminal poll is handled, so
+      # unpolled raw_results/, experiment_log.jsonl, and final_answer.json
+      # stay invisible to main.
+      - qsim_public_job_results:/qsim_logs/public_job_results
+      - ../../../configs:/app/configs:ro
+    environment:
+      - QSIM_HOST=0.0.0.0
+      - QSIM_PORT=8123
+      - QSIM_DEVICE_ID=${QSIM_DEVICE_ID:-clbcs_h2o_14q_v0}
+      - QSIM_BACKEND_MODE=${QSIM_BACKEND_MODE:-simulator}
+      # The hidden state IS the answer: keep the hidden-truth snapshot disabled so
+      # it never lands in the ferried qsim_logs artifacts.
+      - QSIM_SNAPSHOT_HIDDEN_TRUTH=${QSIM_SNAPSHOT_HIDDEN_TRUTH:-0}
+      - QIQCBENCH_CONFIGS=/app/configs
+      - QIQCBENCH_TASK_MATERIALS_DIR=/app/configs/task_materials
+      - QIQCBENCH_TASK_ID=${QIQCBENCH_TASK_ID:-adaptive_clustered_clbcs_h2o}
+      - QIQCBENCH_SURFACES=${QIQCBENCH_SURFACES:-}
+
+  main:
+    # Agent-facing service. The verifier runs in a separate Harbor environment, so
+    # the agent only ever sees public surfaces via MCP + the mounted public
+    # materials (Hamiltonian CSV + stale notebook with a warm-start scheme).
+    volumes:
+      # Agent-visible qsim evidence: only the poll-gated
+      # public_job_results delivery volume; the full qsim_logs volume stays
+      # private to qsim and the Harbor artifact ferry.
+      - qsim_public_job_results:/qsim_logs/public_job_results:ro
+      - ../../../configs/task_materials/adaptive_clustered_clbcs_h2o/public:/task_materials:ro
+    environment:
+      - QIQCBENCH_SURFACES=${QIQCBENCH_SURFACES:-}
+      - no_proxy=qsim,localhost,127.0.0.1,host.docker.internal
+      - NO_PROXY=qsim,localhost,127.0.0.1,host.docker.internal
+
+volumes:
+  qsim_logs:
+  qsim_public_job_results:
